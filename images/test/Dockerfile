@@ -95,17 +95,17 @@ RUN chown -R ${NB_USER}:${NB_USER} ${HOME}
 USER ${NB_USER}
 
 # download the conda environment OR copy from local directory
-COPY environment.yml ${HOME}/tmp/environment.yml
+#COPY environment.yml ${HOME}/tmp/environment.yml
 
 # install conda environment
 # NOTE: conda clean -atipy
 #   removes everything w/o confirmation (leaves all environments functional).
-RUN conda config --set always_yes yes --set changeps1 no && \
-    conda update conda --yes && \
-    conda env update -v -n root --file ${HOME}/tmp/environment.yml && \
-    conda list --name root && \
-    conda clean -atipy && \
-    rm ${HOME}/tmp/environment.yml
+#RUN conda config --set always_yes yes --set changeps1 no && \
+#    conda update conda --yes && \
+#    conda env update -v -n root --file ${HOME}/tmp/environment.yml && \
+#    conda list --name root && \
+#    conda clean -atipy && \
+#    rm ${HOME}/tmp/environment.yml
 
 # export the conda path to force container_env since .bashrc necessarily
 # sourced when when the image is used
