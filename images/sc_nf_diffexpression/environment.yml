@@ -1,4 +1,5 @@
 channels:
+  - letaylor
   - conda-forge
   - bioconda
   - r
