@@ -104,8 +104,8 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 #   removes everything w/o confirmation (leaves all environments functional).
 RUN mamba config --set always_yes yes --set changeps1 no
 RUN mamba update mamba --yes
-# RUN mamba env update -v -n root --file ${HOME}/tmp/environment.yml
-# RUN mamba list --name root
+RUN mamba env update -v -n root --file ${HOME}/tmp/environment.yml
+RUN mamba list --name root
 RUN mamba clean -atipy
 RUN rm ${HOME}/tmp/environment.yml
 
@@ -132,10 +132,11 @@ RUN rm ${HOME}/tmp/environment.yml
 
 COPY renv.lock ${HOME}/tmp/renv.lock
 RUN mkdir -p ${HOME}/tmp/renv/local
-RUN echo "library(renv)" > ${HOME}/tmp/run.R 
+RUN echo "library(renv)" > ${HOME}/tmp/run.R
 RUN echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" >> ${HOME}/tmp/run.R
 
-#RUN Rscript ${HOME}/tmp/run.R
+RUN Rscript ${HOME}/tmp/run.R
+RUN rm ${HOME}/tmp/renv.lock
 ################################################################################
 
 
