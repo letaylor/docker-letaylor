@@ -69,7 +69,7 @@ RUN echo "export PATH=${HOME}/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
 ENV PATH ${HOME}/conda/bin:$PATH
 
 # install mamba
-conda install mamba -n base -c conda-forge
+RUN conda install mamba -n base -c conda-forge
 
 # alternative conda install (instead of the manual install from above)
 # FROM continuumio/miniconda3:latest
