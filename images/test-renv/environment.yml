@@ -5,4 +5,4 @@ channels:
   - r
   - defaults
 dependencies:
-  - pandas
+  - r-renv=0.15.3
