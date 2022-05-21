@@ -1,8 +1,0 @@
-channels:
-  - letaylor
-  - conda-forge
-  - bioconda
-  - r
-  - defaults
-dependencies:
-  - pandas
