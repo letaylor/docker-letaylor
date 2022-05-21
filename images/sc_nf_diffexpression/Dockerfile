@@ -68,6 +68,8 @@ RUN echo "export PATH=${HOME}/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
     ${HOME}/conda/bin/conda clean -atipy
 ENV PATH ${HOME}/conda/bin:$PATH
 
+# install mamba
+RUN conda install mamba -n base -c conda-forge
 
 # alternative conda install (instead of the manual install from above)
 # FROM continuumio/miniconda3:latest
@@ -100,11 +102,11 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 # install conda environment
 # NOTE: conda clean -atipy
 #   removes everything w/o confirmation (leaves all environments functional).
-RUN conda config --set always_yes yes --set changeps1 no && \
-    conda update conda --yes && \
-    conda env update -v -n root --file ${HOME}/tmp/environment.yml && \
-    conda list --name root && \
-    conda clean -atipy && \
+RUN mamba config --set always_yes yes --set changeps1 no && \
+    mamba update mamba --yes && \
+    mamba env update -v -n root --file ${HOME}/tmp/environment.yml && \
+    mamba list --name root && \
+    mamba clean -atipy && \
     rm ${HOME}/tmp/environment.yml
 
 # export the conda path to force container_env since .bashrc necessarily
