@@ -17,7 +17,7 @@ Store a `$DOCKERHUB_TOKEN` as a secret in your repository.
 6. In your GitHub repository, navigate to settings, and secrets under security
 8. Add an environment variable with the name `DOCKERHUB_TOKEN` and give it the value of the API token that you copied from [hub.docker.com](https://hub.docker.com/).
 
-NOTE: You may also add a `DOCKER_USERNAME` secret. By default the publishing workflow assumes your DockerHub username is the same as your GitHub username.
+NOTE: You may also add a `DOCKER_USERNAME` secret. By default, the workflow assumes your DockerHub username is the same as your GitHub username. To set up a different username, you will need to replace `${{ github.actor }}` with `${{ secrets.DOCKER_USERNAME }}` in `.github/workflows/docker-publish.yml`. 
 
 ## 2. Edit config files
 
