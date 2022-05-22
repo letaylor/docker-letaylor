@@ -7,5 +7,6 @@ channels:
 dependencies:
   - pip
   - plotnine
+  - seaborn=0.11.2
   - scanpy=1.5.2.dev0
   - r-renv=0.15.3
