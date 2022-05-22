@@ -122,19 +122,15 @@ RUN rm ${HOME}/tmp/environment.yml
 #RUN chown -R ${NB_USER}:${NB_USER} ${HOME}
 #USER ${NB_USER}
 
-#RUN mkdir ${HOME}/tmp/renv && \
-#    echo 'source("renv/activate.R")' > ${HOME}/tmp/run.R && \
-#    echo 'renv::restore()' >> ${HOME}/tmp/run.R
-
 # copy renv information from local directory
-#COPY renv.lock ${HOME}/tmp/renv.lock
-#COPY renv/activate.R ${HOME}/tmp/renv/activate.R
-
 COPY renv.lock ${HOME}/tmp/renv.lock
+
+# Prepare the renv command
 RUN mkdir -p ${HOME}/tmp/renv/local
 RUN echo "library(renv)" > ${HOME}/tmp/run.R
 RUN echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" >> ${HOME}/tmp/run.R
 
+# Run the renv command and clear out files no longer required
 RUN Rscript ${HOME}/tmp/run.R
 RUN rm ${HOME}/tmp/renv.lock
 ################################################################################
