@@ -19,7 +19,7 @@ env:
   # Use docker.io for Docker Hub or ghcr.io
   REGISTRY: docker.io
   # IMAGE_NAME: ${{ github.repository }}
-  IMAGE_NAME: test-renv
+  IMAGE_NAME: sc_nf_diffexpression
 
 
 jobs:

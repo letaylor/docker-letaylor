@@ -5,14 +5,7 @@ channels:
   - r
   - defaults
 dependencies:
-  - scikit-learn=0.23.1
-  - plotnine=0.7.0
-  - scipy=1.5.0
-  - scanpy=1.5.1
   - pip
-  - joblib=0.15.1
-  - pandas=1.0.5
-  - r-base=4.0.2
-  - libxml2
-  - r-xml=3.99-0.3
+  - plotnine
+  - scanpy=1.5.2.dev0
   - r-renv=0.15.3
