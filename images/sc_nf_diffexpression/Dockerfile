@@ -128,7 +128,7 @@ COPY renv.lock ${HOME}/tmp/renv.lock
 # Prepare the renv command
 RUN mkdir -p ${HOME}/tmp/renv/local
 RUN echo "library(renv)" > ${HOME}/tmp/run.R
-RUN echo "renv::settings$use.cache(FALSE)" > ${HOME}/tmp/run.R
+#RUN echo "renv::settings$use.cache(FALSE)" > ${HOME}/tmp/run.R
 RUN echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" >> ${HOME}/tmp/run.R
 
 # Run the renv command and clear out files no longer required
