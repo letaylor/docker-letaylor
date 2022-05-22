@@ -1,0 +1,170 @@
+{
+  "R": {
+    "Version": "4.2.0",
+    "Repositories": [
+      {
+        "Name": "CRAN",
+        "URL": "https://cran.ma.imperial.ac.uk"
+      }
+    ]
+  },
+  "Bioconductor": {
+    "Version": "3.15"
+  },
+  "Rcpp": {
+    "Package": "Rcpp",
+    "Version": "1.0.5",
+    "Source": "Repository",
+    "Repository": "CRAN",
+    "Hash": "125dc7a0ed375eb68c0ce533b48d291f",
+    "Requirements": []
+  },
+  "RcppArmadillo": {
+    "Package": "RcppArmadillo",
+    "Version": "0.9.900.2.0",
+    "Source": "Repository",
+    "Repository": "CRAN",
+    "Hash": "8845285b6151967fb0d95678b7eee11a",
+    "Requirements": [
+      "Rcpp"
+    ]
+  },
+  "RcppEigen": {
+    "Package": "RcppEigen",
+    "Version": "0.3.3.9.1",
+    "Source": "Repository",
+    "Repository": "CRAN",
+    "Hash": "ddfa72a87fdf4c80466a20818be91d00",
+    "Requirements": [
+      "Matrix",
+      "Rcpp"
+    ]
+  },
+  "Packages": {
+    "AnnotationDbi": {
+      "Package": "AnnotationDbi",
+      "Version": "1.50.3",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/AnnotationDbi",
+      "git_branch": "RELEASE_3_11",
+      "git_last_commit": "efa119c",
+      "git_last_commit_date": "2020-07-24",
+      "Hash": "d19b3dfd917dff8a56151842e82fc098",
+      "Requirements": [
+        "Biobase",
+        "BiocGenerics",
+        "DBI",
+        "IRanges",
+        "RSQLite",
+        "S4Vectors"
+      ]
+    },
+    "renv": {
+      "Package": "renv",
+      "Version": "0.15.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "318c703b833089e1bc0c6a198362ca19",
+      "Requirements": []
+    },
+    "markdown": {
+      "Package": "markdown",
+      "Version": "1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4584a57f565dd7987d59dda3a02cfb41"
+    },
+    "mime": {
+      "Package": "mime",
+      "Version": "0.7",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "908d95ccbfd1dd274073ef07a7c93934"
+    },
+    "DESeq2": {
+      "Package": "DESeq2",
+      "Version": "1.30.1",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/DESeq2",
+      "git_branch": "RELEASE_3_12",
+      "git_last_commit": "340e674",
+      "git_last_commit_date": "2021-02-19",
+      "Hash": "1e2b51957aa16c8129786e82cb28a708",
+      "Requirements": [
+        "Biobase",
+        "BiocGenerics",
+        "BiocParallel",
+        "GenomicRanges",
+        "IRanges",
+        "Rcpp",
+        "RcppArmadillo",
+        "S4Vectors",
+        "SummarizedExperiment",
+        "genefilter",
+        "geneplotter",
+        "ggplot2",
+        "locfit"
+      ]
+    },
+    "RUVSeq": {
+      "Package": "RUVSeq",
+      "Version": "1.24.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/RUVSeq",
+      "git_branch": "RELEASE_3_12",
+      "git_last_commit": "eab5505",
+      "git_last_commit_date": "2020-10-27",
+      "Hash": "b9fc0942d26851fd74f367dbd7c44572",
+      "Requirements": [
+        "Biobase",
+        "EDASeq",
+        "MASS",
+        "edgeR"
+      ]
+    },
+    "glmGamPoi": {
+      "Package": "glmGamPoi",
+      "Version": "1.2.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/glmGamPoi",
+      "git_branch": "RELEASE_3_12",
+      "git_last_commit": "a11d461",
+      "git_last_commit_date": "2020-10-27",
+      "Hash": "e1362597df7f5c4d158b035966da0493",
+      "Requirements": [
+        "DelayedArray",
+        "DelayedMatrixStats",
+        "HDF5Array",
+        "Rcpp",
+        "RcppArmadillo",
+        "SummarizedExperiment",
+        "beachmat",
+        "matrixStats"
+      ]
+    },
+    "MAST": {
+      "Package": "MAST",
+      "Version": "1.16.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/MAST",
+      "git_branch": "RELEASE_3_12",
+      "git_last_commit": "7c88cab",
+      "git_last_commit_date": "2020-10-27",
+      "Hash": "650a23fd7adce2aa83929b3a6879c0eb",
+      "Requirements": [
+        "Biobase",
+        "BiocGenerics",
+        "S4Vectors",
+        "SingleCellExperiment",
+        "SummarizedExperiment",
+        "abind",
+        "data.table",
+        "ggplot2",
+        "plyr",
+        "progress",
+        "reshape2",
+        "stringr"
+      ]
+    }
+  }
+}
