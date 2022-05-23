@@ -157,6 +157,167 @@
         "snow"
       ]
     },
+    "IHW": {
+      "Package": "IHW",
+      "Version": "1.18.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/IHW",
+      "git_branch": "RELEASE_3_12",
+      "git_last_commit": "a59642f",
+      "git_last_commit_date": "2020-10-27",
+      "Hash": "e6151c6984919a921e6d74a03aec5e45",
+      "Requirements": [
+        "BiocGenerics",
+        "fdrtool",
+        "lpsymphony",
+        "slam"
+      ]
+    },
+    "simplifyEnrichment": {
+      "Package": "simplifyEnrichment",
+      "Version": "1.5.3",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "simplifyEnrichment",
+      "RemoteUsername": "jokergoo",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "756b5fa69b6db825300f902f0762acb91db844e1",
+      "Hash": "14988c9957da36a25a90ae83346ca5ed",
+      "Requirements": [
+        "AnnotationDbi",
+        "BiocGenerics",
+        "ComplexHeatmap",
+        "GO.db",
+        "GOSemSim",
+        "GetoptLong",
+        "GlobalOptions",
+        "Matrix",
+        "circlize",
+        "clue",
+        "cluster",
+        "colorspace",
+        "digest",
+        "org.Hs.eg.db",
+        "proxyC",
+        "slam",
+        "tm"
+      ]
+    },
+    "GOSemSim": {
+      "Package": "GOSemSim",
+      "Version": "2.16.1",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/GOSemSim",
+      "git_branch": "RELEASE_3_12",
+      "git_last_commit": "92f1d56",
+      "git_last_commit_date": "2020-10-29",
+      "Hash": "f73eccd90a8131c9798bd6675e442c5a",
+      "Requirements": [
+        "AnnotationDbi",
+        "GO.db",
+        "Rcpp"
+      ]
+    },
+    "enrichplot": {
+      "Package": "enrichplot",
+      "Version": "1.10.2",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/enrichplot",
+      "git_branch": "RELEASE_3_12",
+      "git_last_commit": "77ee04f",
+      "git_last_commit_date": "2021-01-28",
+      "Hash": "bfe9798d5d9be7c8bfb269c5f19dd957",
+      "Requirements": [
+        "DOSE",
+        "GOSemSim",
+        "RColorBrewer",
+        "cowplot",
+        "ggplot2",
+        "ggraph",
+        "igraph",
+        "magrittr",
+        "plyr",
+        "purrr",
+        "reshape2",
+        "scatterpie",
+        "shadowtext"
+      ]
+    },
+    "ComplexHeatmap": {
+      "Package": "ComplexHeatmap",
+      "Version": "2.13.1",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "ComplexHeatmap",
+      "RemoteUsername": "jokergoo",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "887aa5333a86e79d0a56f0d395f565a88109aa35",
+      "Hash": "f29708bc5b901039f4433eb953546eca",
+      "Requirements": [
+        "GetoptLong",
+        "GlobalOptions",
+        "IRanges",
+        "RColorBrewer",
+        "circlize",
+        "clue",
+        "codetools",
+        "colorspace",
+        "digest",
+        "doParallel",
+        "foreach",
+        "matrixStats",
+        "png"
+      ]
+    },
+    "clusterProfiler": {
+      "Package": "clusterProfiler",
+      "Version": "3.18.1",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/clusterProfiler",
+      "git_branch": "RELEASE_3_12",
+      "git_last_commit": "2c0fca7",
+      "git_last_commit_date": "2021-02-05",
+      "Hash": "5f344773b73f177d66183d4c807c2670",
+      "Requirements": [
+        "AnnotationDbi",
+        "DOSE",
+        "GO.db",
+        "GOSemSim",
+        "downloader",
+        "dplyr",
+        "enrichplot",
+        "magrittr",
+        "plyr",
+        "qvalue",
+        "rlang",
+        "rvcheck",
+        "tidyr"
+      ]
+    },
+    "rrvgo": {
+      "Package": "rrvgo",
+      "Version": "1.2.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/rrvgo",
+      "git_branch": "RELEASE_3_12",
+      "git_last_commit": "ed38a76",
+      "git_last_commit_date": "2020-10-27",
+      "Hash": "debc317ecd83da3e11e91045e21fe74c",
+      "Requirements": [
+        "AnnotationDbi",
+        "GO.db",
+        "GOSemSim",
+        "ggplot2",
+        "ggrepel",
+        "pheatmap",
+        "shiny",
+        "tm",
+        "treemap",
+        "wordcloud"
+      ]
+    },
     "org.Hs.eg.db": {
       "Package": "org.Hs.eg.db",
       "Version": "3.12.0",
@@ -166,12 +327,48 @@
         "AnnotationDbi"
       ]
     },
+    "umap": {
+      "Package": "umap",
+      "Version": "0.2.8.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "bdac3583bca22a4efbee25a1cd8f3fc9",
+      "Requirements": [
+        "Matrix",
+        "RSpectra",
+        "Rcpp",
+        "openssl",
+        "reticulate"
+      ]
+    },
+    "tm": {
+      "Package": "tm",
+      "Version": "0.7-8",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "608413cbdf64d418b6a33e6c3d4d3b25",
+      "Requirements": [
+        "BH",
+        "NLP",
+        "Rcpp",
+        "slam",
+        "xml2"
+      ]
+    },
     "xml2": {
       "Package": "xml2",
       "Version": "1.3.3",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "40682ed6a969ea5abfd351eb67833adc",
+      "Requirements": []
+    },
+    "wesanderson": {
+      "Package": "wesanderson",
+      "Version": "0.3.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "42f92f1e9ef722355959ec1f7c459636",
       "Requirements": []
     },
     "optparse": {
