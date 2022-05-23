@@ -11,14 +11,6 @@
   "Bioconductor": {
     "Version": "3.15"
   },
-    "renv": {
-      "Package": "renv",
-      "Version": "0.15.3",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "318c703b833089e1bc0c6a198362ca19",
-      "Requirements": []
-    },
     "DESeq2": {
       "Package": "DESeq2",
       "Version": "1.30.1",
@@ -42,6 +34,45 @@
         "geneplotter",
         "ggplot2",
         "locfit"
+      ]
+    },
+    "edgeR": {
+      "Package": "edgeR",
+      "Version": "3.30.3",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/edgeR",
+      "git_branch": "RELEASE_3_11",
+      "git_last_commit": "7a3a272",
+      "git_last_commit_date": "2020-06-02",
+      "Hash": "fed69054bac345df0b60fc9afa7101e9",
+      "Requirements": [
+        "Rcpp",
+        "limma",
+        "locfit"
+      ]
+    },
+    "MAST": {
+      "Package": "MAST",
+      "Version": "1.16.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/MAST",
+      "git_branch": "RELEASE_3_12",
+      "git_last_commit": "7c88cab",
+      "git_last_commit_date": "2020-10-27",
+      "Hash": "650a23fd7adce2aa83929b3a6879c0eb",
+      "Requirements": [
+        "Biobase",
+        "BiocGenerics",
+        "S4Vectors",
+        "SingleCellExperiment",
+        "SummarizedExperiment",
+        "abind",
+        "data.table",
+        "ggplot2",
+        "plyr",
+        "progress",
+        "reshape2",
+        "stringr"
       ]
     },
     "RUVSeq": {
@@ -80,28 +111,45 @@
         "matrixStats"
       ]
     },
-    "MAST": {
-      "Package": "MAST",
+    "fgsea": {
+      "Package": "fgsea",
       "Version": "1.16.0",
       "Source": "Bioconductor",
-      "git_url": "https://git.bioconductor.org/packages/MAST",
+      "git_url": "https://git.bioconductor.org/packages/fgsea",
       "git_branch": "RELEASE_3_12",
-      "git_last_commit": "7c88cab",
+      "git_last_commit": "9d9df59",
       "git_last_commit_date": "2020-10-27",
-      "Hash": "650a23fd7adce2aa83929b3a6879c0eb",
+      "Hash": "0ed01e7c1d5fef94d795abb1597aab86",
       "Requirements": [
-        "Biobase",
-        "BiocGenerics",
-        "S4Vectors",
-        "SingleCellExperiment",
-        "SummarizedExperiment",
-        "abind",
+        "BH",
+        "BiocParallel",
+        "Matrix",
+        "Rcpp",
         "data.table",
+        "fastmatch",
         "ggplot2",
-        "plyr",
-        "progress",
-        "reshape2",
-        "stringr"
+        "gridExtra"
+      ]
+    },
+    "limma": {
+      "Package": "limma",
+      "Version": "3.44.3",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/limma",
+      "git_branch": "RELEASE_3_11",
+      "git_last_commit": "90275de",
+      "git_last_commit_date": "2020-06-12",
+      "Hash": "dd56ef73b83f3f9393ae28c7549d78ab",
+      "Requirements": []
+    },
+    "optparse": {
+      "Package": "optparse",
+      "Version": "1.6.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "35beff0d8469fbb7037925dde658888c",
+      "Requirements": [
+        "getopt"
       ]
     }
 }
