@@ -102,12 +102,12 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 # install conda environment
 # NOTE: conda clean -atipy
 #   removes everything w/o confirmation (leaves all environments functional).
-RUN mamba config --set always_yes yes --set changeps1 no
-RUN mamba update mamba --yes
-RUN mamba env update -v -n root --file ${HOME}/tmp/environment.yml
-RUN mamba list --name root
-RUN mamba clean -atipy
-RUN rm ${HOME}/tmp/environment.yml
+RUN mamba config --set always_yes yes --set changeps1 no && \
+    mamba update mamba --yes && \
+    mamba env update -v -n root --file ${HOME}/tmp/environment.yml && \
+    mamba list --name root && \
+    mamba clean -atipy && \
+    rm ${HOME}/tmp/environment.yml
 
 # export the conda path to force container_env since .bashrc necessarily
 # sourced when when the image is used
@@ -126,10 +126,9 @@ RUN rm ${HOME}/tmp/environment.yml
 COPY renv.lock ${HOME}/tmp/renv.lock
 
 # Prepare the renv command
-RUN mkdir -p ${HOME}/tmp/renv/local
-RUN echo "library(renv)" > ${HOME}/tmp/run.R
-#RUN echo "renv::settings$use.cache(FALSE)" > ${HOME}/tmp/run.R
-RUN echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" >> ${HOME}/tmp/run.R
+RUN mkdir -p ${HOME}/tmp/renv/local && \
+    echo "library(renv)" > ${HOME}/tmp/run.R && \
+    echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" >> ${HOME}/tmp/run.R
 
 # Run the renv command and clear out files no longer required
 RUN Rscript ${HOME}/tmp/run.R
