@@ -122,6 +122,9 @@ RUN mamba config --set always_yes yes --set changeps1 no && \
 #RUN chown -R ${NB_USER}:${NB_USER} ${HOME}
 #USER ${NB_USER}
 
+# Install R packages as root
+USER root
+
 # copy renv information from local directory
 COPY renv.lock ${HOME}/tmp/renv.lock
 
