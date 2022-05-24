@@ -133,14 +133,16 @@ RUN cat ${HOME}/tmp/renv.lock
 RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
 # Install the packages
-RUN R --vanilla -e "options(renv.consent = T)" && \
-    R --vanilla -e "options(renv.config.cache.enabled = F)" && \
-    R --vanilla -e "renv::activate()" && \
-    R --vanilla -e "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt = F)" && \
-    R --vanilla -e "renv::isolate()" && \
-    R --vanilla -e "renv::activate()"
+RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
+    echo "options(renv.consent = T)" >> ${HOME}/tmp/run.R && \
+    echo "options(renv.config.cache.enabled = F)" >> ${HOME}/tmp/run.R && \
+    echo "renv::activate()" >> ${HOME}/tmp/run.R && \
+    echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt = F)" >> ${HOME}/tmp/run.R && \
+    echo "renv::isolate()" >> ${HOME}/tmp/run.R
 
 # Clear out files no longer required
+RUN cat ${HOME}/tmp/run.R
+RUN R --vanilla -e ${HOME}/tmp/run.R
 RUN rm ${HOME}/tmp/renv.lock
 RUN R --vanilla -e "library(optparse)"
 ################################################################################
