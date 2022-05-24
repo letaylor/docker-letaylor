@@ -127,16 +127,22 @@ USER root
 
 # Copy renv information from local directory
 COPY renv.lock ${HOME}/tmp/renv.lock
+RUN cat ${HOME}/tmp/renv.lock
 
 # Install renv
 RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
 # Install the packages
-RUN R --vanilla -e "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" && \
-    R --vanilla -e "renv::isolate()"
+RUN R --vanilla -e "options(renv.consent = T)" && \
+    R --vanilla -e "options(renv.config.cache.symlinks = F)" && \
+    R --vanilla -e "renv::activate()" && \
+    R --vanilla -e "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt = F)" && \
+    R --vanilla -e "renv::isolate()" && \
+    R --vanilla -e "renv::activate()"
 
 # Clear out files no longer required
 RUN rm ${HOME}/tmp/renv.lock
+RUN R --vanilla -e "library(optparse)"
 ################################################################################
 
 
