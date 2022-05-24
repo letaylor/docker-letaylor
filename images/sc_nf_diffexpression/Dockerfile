@@ -126,7 +126,7 @@ RUN mamba config --set always_yes yes --set changeps1 no && \
 COPY renv.lock ${HOME}/tmp/renv.lock
 
 # install renv
-RUN install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))
+RUN R -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
 # Prepare the renv command
 RUN mkdir -p ${HOME}/tmp/renv/local && \
