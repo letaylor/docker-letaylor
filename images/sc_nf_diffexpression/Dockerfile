@@ -142,7 +142,7 @@ RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
 
 # Clear out files no longer required
 RUN cat ${HOME}/tmp/run.R
-RUN R --vanilla -e ${HOME}/tmp/run.R
+RUN Rscript ${HOME}/tmp/run.R
 RUN rm ${HOME}/tmp/renv.lock
 RUN R --vanilla -e "library(optparse)"
 ################################################################################
