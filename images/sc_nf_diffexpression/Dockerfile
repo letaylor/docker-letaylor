@@ -130,7 +130,7 @@ COPY renv.lock ${HOME}/tmp/renv.lock
 RUN cat ${HOME}/tmp/renv.lock
 
 # Install renv
-RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
+# RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
 # Install the packages
 RUN echo "library(renv)" > ${HOME}/tmp/run.R && \

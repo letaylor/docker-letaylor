@@ -9,3 +9,6 @@ dependencies:
   - seaborn>=0.11.2
   - statsmodels>=0.13.2
   - scanpy=1.5.2.dev0
+  - r-base=4.2.0
+  - r-renv=0.15.3
+  - r-tidyverse
