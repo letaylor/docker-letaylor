@@ -134,7 +134,7 @@ RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-p
 
 # Install the packages
 RUN R --vanilla -e "options(renv.consent = T)" && \
-    R --vanilla -e "options(renv.config.cache.symlinks = F)" && \
+    R --vanilla -e "options(renv.config.cache.enabled = F)" && \
     R --vanilla -e "renv::activate()" && \
     R --vanilla -e "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt = F)" && \
     R --vanilla -e "renv::isolate()" && \
