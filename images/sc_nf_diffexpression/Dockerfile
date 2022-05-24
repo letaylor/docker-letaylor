@@ -125,16 +125,15 @@ RUN mamba config --set always_yes yes --set changeps1 no && \
 # Install R packages as root
 USER root
 
-# copy renv information from local directory
+# Copy renv information from local directory
 COPY renv.lock ${HOME}/tmp/renv.lock
 
-# install renv
+# Install renv
 RUN R -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
-# Prepare the renv command
-RUN mkdir -p ${HOME}/tmp/renv/local && \
-    RUN R -e "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" && \
-    RUN R -e "renv::activate()"
+# Install the packages
+RUN R -e "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" && \
+    R -e "renv::activate()"
 
 # Clear out files no longer required
 RUN rm ${HOME}/tmp/renv.lock
