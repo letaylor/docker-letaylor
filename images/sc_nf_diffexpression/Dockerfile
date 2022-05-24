@@ -132,8 +132,9 @@ COPY renv.lock ${HOME}/tmp/renv.lock
 RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
 # Install the packages
-RUN R --vanilla -e "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" && \
-    R --vanilla -e "renv::activate()"
+RUN R --vanilla -e "settings$use.cache(FALSE)" && \
+    R --vanilla -e "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" && \
+    R --vanilla -e "renv::isolate()"
 
 # Clear out files no longer required
 RUN rm ${HOME}/tmp/renv.lock
