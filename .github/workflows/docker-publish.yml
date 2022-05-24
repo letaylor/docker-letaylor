@@ -91,3 +91,11 @@ jobs:
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
         run: cosign sign ${{ steps.meta.outputs.tags }}@${{ steps.build-and-push.outputs.digest }}
+
+      # Test to make sure the required packages are available
+      - name: Test the Docker image
+        id: test
+        uses: docker://${{ github.actor }}/${{ env.IMAGE_NAME }}:latest
+        with:
+            entrypoint: Python
+            args: print(1)
