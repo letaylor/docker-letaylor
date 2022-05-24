@@ -133,11 +133,10 @@ RUN R -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org
 
 # Prepare the renv command
 RUN mkdir -p ${HOME}/tmp/renv/local && \
-    echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" && \
-    echo "renv::activate()" >> ${HOME}/tmp/run.R
+    RUN R -e "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" && \
+    RUN R -e "renv::activate()"
 
-# Run the renv command and clear out files no longer required
-RUN Rscript ${HOME}/tmp/run.R
+# Clear out files no longer required
 RUN rm ${HOME}/tmp/renv.lock
 ################################################################################
 
