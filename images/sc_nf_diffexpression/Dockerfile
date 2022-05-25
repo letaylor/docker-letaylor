@@ -133,12 +133,13 @@ COPY renv.lock ${HOME}/tmp/renv.lock
 # Install bioconductor and
 RUN R --vanilla -e "install.packages('BiocManager', repos = c(CRAN = 'https://cloud.r-project.org'))"
 RUN R --vanilla -e "BiocManager::install()"
-RUN R --vanilla -e "BiocManager::install(c('Rhtslib'))"
+RUN R --vanilla -e "BiocManager::install(c('org.Hs.eg.db'))"
 
 # Install renv
 RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
 # Install the packages
+# NOTE: for Rhtslib one needs to run `apt-get install libbz2-dev liblzma-dev`
 RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
     echo "options(renv.consent = T)" >> ${HOME}/tmp/run.R && \
     echo "options(renv.config.user.profile = T)" >> ${HOME}/tmp/run.R && \
