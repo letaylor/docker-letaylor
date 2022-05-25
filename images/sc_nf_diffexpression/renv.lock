@@ -44,15 +44,6 @@
         "rvcheck",
         "tidyr"
       ]
-    },
-    "org.Hs.eg.db": {
-      "Package": "org.Hs.eg.db",
-      "Version": "3.12.0",
-      "Source": "Bioconductor",
-      "Hash": "3d2aea7762e91aa3d5b7c267c56d9055",
-      "Requirements": [
-        "AnnotationDbi"
-      ]
     }
   }
 }
