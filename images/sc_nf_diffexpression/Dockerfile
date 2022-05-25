@@ -37,7 +37,9 @@ RUN apt-get update && \
         libxml2-dev \
         libgit2-dev \
         zlib1g-dev \
-        build-essential && \
+        build-essential \
+        libbz2-dev \
+        liblzma-dev && \
     apt-get purge && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
