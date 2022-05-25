@@ -127,7 +127,11 @@ USER root
 
 # Copy renv information from local directory
 COPY renv.lock ${HOME}/tmp/renv.lock
-RUN cat ${HOME}/tmp/renv.lock
+
+# Install bioconductor and
+RUN R --vanilla -e "install.packages(\"BiocManager\")"
+RUN R --vanilla -e "BiocManager::install()"
+RUN R --vanilla -e "BiocManager::install(c(\"Rhtslib\")"
 
 # Install renv
 RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
