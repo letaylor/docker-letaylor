@@ -238,31 +238,6 @@
         "png"
       ]
     },
-    "clusterProfiler": {
-      "Package": "clusterProfiler",
-      "Version": "3.18.1",
-      "Source": "Bioconductor",
-      "git_url": "https://git.bioconductor.org/packages/clusterProfiler",
-      "git_branch": "RELEASE_3_12",
-      "git_last_commit": "2c0fca7",
-      "git_last_commit_date": "2021-02-05",
-      "Hash": "5f344773b73f177d66183d4c807c2670",
-      "Requirements": [
-        "AnnotationDbi",
-        "DOSE",
-        "GO.db",
-        "GOSemSim",
-        "downloader",
-        "dplyr",
-        "enrichplot",
-        "magrittr",
-        "plyr",
-        "qvalue",
-        "rlang",
-        "rvcheck",
-        "tidyr"
-      ]
-    },
     "rrvgo": {
       "Package": "rrvgo",
       "Version": "1.2.0",
