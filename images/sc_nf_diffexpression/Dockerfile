@@ -131,11 +131,11 @@ USER root
 COPY renv.lock ${HOME}/tmp/renv.lock
 
 # Install bioconductor and
-RUN R --vanilla -e "install.packages(c('BiocManager', 'devtools'), repos = c(CRAN = 'https://cloud.r-project.org'))"
+# RUN R --vanilla -e "install.packages(c('BiocManager', 'devtools'), repos = c(CRAN = 'https://cloud.r-project.org'))"
 # NOTE: need to install rvcheck=0.1.8 to resolve error in clusterProfiler:
 #       object 'get_fun_from_pkg' not found
 # RUN R --vanilla -e "devtools::install_version('rvcheck', version = '0.1.8', repos = 'http://cran.us.r-project.org')"
-RUN R --vanilla -e "BiocManager::install()"
+# RUN R --vanilla -e "BiocManager::install()"
 # RUN R --vanilla -e "BiocManager::install(c('simplifyEnrichment'))"
 
 # Install renv
@@ -155,16 +155,16 @@ RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
 # Clear out files no longer required
 RUN cat ${HOME}/tmp/run.R
 RUN Rscript ${HOME}/tmp/run.R
+RUN cat .Rprofile
 RUN rm ${HOME}/tmp/renv.lock
-RUN R --vanilla -e "library(optparse)"
+#RUN R -e "library(optparse)"
 ################################################################################
 
 
 ############################ Setup: cleanup ####################################
 # clear tmp if there is anything in there...
 USER root
-RUN rm -rf ${HOME}/tmp
-RUN rm -rf /tmp/*
+RUN rm -rf ${HOME}/tmp && rm -rf /tmp/*
 ################################################################################
 
 
