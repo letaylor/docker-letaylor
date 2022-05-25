@@ -135,7 +135,6 @@ RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-p
 # Install the packages
 RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
     echo "options(renv.consent = T)" >> ${HOME}/tmp/run.R && \
-    echo "options(renv.config.cache.enabled = F)" >> ${HOME}/tmp/run.R && \
     echo "renv::activate()" >> ${HOME}/tmp/run.R && \
     echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt = F)" >> ${HOME}/tmp/run.R && \
     echo "renv::isolate()" >> ${HOME}/tmp/run.R

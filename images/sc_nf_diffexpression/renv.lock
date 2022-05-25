@@ -174,37 +174,6 @@
         "slam"
       ]
     },
-    "simplifyEnrichment": {
-      "Package": "simplifyEnrichment",
-      "Version": "1.5.3",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "simplifyEnrichment",
-      "RemoteUsername": "jokergoo",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "756b5fa69b6db825300f902f0762acb91db844e1",
-      "Hash": "14988c9957da36a25a90ae83346ca5ed",
-      "Requirements": [
-        "AnnotationDbi",
-        "BiocGenerics",
-        "ComplexHeatmap",
-        "GO.db",
-        "GOSemSim",
-        "GetoptLong",
-        "GlobalOptions",
-        "Matrix",
-        "circlize",
-        "clue",
-        "cluster",
-        "colorspace",
-        "digest",
-        "org.Hs.eg.db",
-        "proxyC",
-        "slam",
-        "tm"
-      ]
-    },
     "GOSemSim": {
       "Package": "GOSemSim",
       "Version": "2.16.1",
@@ -317,15 +286,6 @@
         "tm",
         "treemap",
         "wordcloud"
-      ]
-    },
-    "org.Hs.eg.db": {
-      "Package": "org.Hs.eg.db",
-      "Version": "3.12.0",
-      "Source": "Bioconductor",
-      "Hash": "3d2aea7762e91aa3d5b7c267c56d9055",
-      "Requirements": [
-        "AnnotationDbi"
       ]
     },
     "umap": {
