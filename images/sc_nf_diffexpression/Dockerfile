@@ -136,7 +136,7 @@ RUN R --vanilla -e "install.packages(c('BiocManager', 'devtools'), repos = c(CRA
 #       object 'get_fun_from_pkg' not found
 # RUN R --vanilla -e "devtools::install_version('rvcheck', version = '0.1.8', repos = 'http://cran.us.r-project.org')"
 RUN R --vanilla -e "BiocManager::install()"
-RUN R --vanilla -e "BiocManager::install(c('simplifyEnrichment'))"
+# RUN R --vanilla -e "BiocManager::install(c('simplifyEnrichment'))"
 
 # Install renv
 RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
