@@ -1,6 +1,7 @@
 channels:
   - letaylor
   - conda-forge
+  - r
   - bioconda
   - defaults
 dependencies:
