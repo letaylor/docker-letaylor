@@ -156,7 +156,7 @@ RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
 RUN cat ${HOME}/tmp/run.R
 RUN Rscript ${HOME}/tmp/run.R
 RUN rm ${HOME}/tmp/renv.lock
-# RUN R --vanilla -e "library(optparse)"
+RUN R --vanilla -e "library(optparse)"
 ################################################################################
 
 

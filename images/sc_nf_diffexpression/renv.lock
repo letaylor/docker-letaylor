@@ -44,6 +44,16 @@
         "rvcheck",
         "tidyr"
       ]
+    },
+    "optparse": {
+      "Package": "optparse",
+      "Version": "1.7.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "2490600671344e847c37a7f75ee458c0",
+      "Requirements": [
+        "getopt"
+      ]
     }
   }
 }
