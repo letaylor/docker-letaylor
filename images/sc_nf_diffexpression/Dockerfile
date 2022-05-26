@@ -1,4 +1,5 @@
-FROM rocker/tidyverse:4.2.0
+FROM rocker/r-base:4.2.0
+# FROM rocker/tidyverse:4.2.0  # alternative
 
 
 ############################ Setup: OS #########################################
@@ -140,9 +141,17 @@ COPY renv.lock ${HOME}/tmp/renv.lock
 #       options(renv.config.user.profile = T)
 #       options(renv.config.user.library = T)
 #       options(renv.config.external.libraries = .libPaths())
+#ENV RENV_CONFIG_USER_PROFILE TRUE
+#ENV RENV_CONFIG_USER_LIBRARY TRUE
+#ENV RENV_CONFIG_EXTERNAL_LIBRARIES /usr/local/lib/R/library:/usr/local/lib/R/site-library
+#ENV RENV_CONSENT TRUE
+# RUN echo "options(renv.config.user.profile = T)" >> ${HOME}/.Rprofile && \
+#    echo "options(renv.config.user.library = T)" >> ${HOME}/.Rprofile && \
+#    echo "options(renv.config.external.libraries = .libPaths())" >> ${HOME}/.Rprofile && \
+#    echo "options(renv.consent = T)" >> ${HOME}/.Rprofile && \
+#    echo "options(renv.use.cache = F)" >> ${HOME}/.Rprofile
 RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
     echo "options(renv.consent = T)" >> ${HOME}/tmp/run.R && \
-    echo "options(renv.use.cache = F)" >> ${HOME}/tmp/run.R && \
     echo "renv::init(bare = F, force = T)" >> ${HOME}/tmp/run.R && \
     echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt = F)" >> ${HOME}/tmp/run.R && \
     echo "renv::activate()" >> ${HOME}/tmp/run.R
