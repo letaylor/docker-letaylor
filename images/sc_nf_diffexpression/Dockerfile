@@ -135,14 +135,15 @@ USER ${NB_USER}
 COPY renv.lock ${HOME}/tmp/renv.lock
 
 # Install the packages
-# NOTE: for Rhtslib one needs to run `apt-get install libbz2-dev liblzma-dev`
+# NOTE: For Rhtslib one needs to run `apt-get install libbz2-dev liblzma-dev`
+# NOTE: The below commands give access to external libraries and configs
+#       options(renv.config.user.profile = T)
+#       options(renv.config.user.library = T)
+#       options(renv.config.external.libraries = .libPaths())
 RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
     echo "options(renv.consent = T)" >> ${HOME}/tmp/run.R && \
     echo "options(renv.use.cache = F)" >> ${HOME}/tmp/run.R && \
-    echo "options(renv.config.user.profile = T)" >> ${HOME}/tmp/run.R && \
-    echo "options(renv.config.user.library = T)" >> ${HOME}/tmp/run.R && \
-    echo "options(renv.config.external.libraries = .libPaths())" >> ${HOME}/tmp/run.R && \
-    echo "renv::init(bare = T, force = T)" >> ${HOME}/tmp/run.R && \
+    echo "renv::init(bare = F, force = T)" >> ${HOME}/tmp/run.R && \
     echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt = F)" >> ${HOME}/tmp/run.R && \
     echo "renv::activate()" >> ${HOME}/tmp/run.R
 
