@@ -53,8 +53,7 @@ RUN adduser --disabled-password \
 
 # set up the user directory structure
 RUN mkdir ${HOME}/tmp && \
-    mkdir ${HOME}/bin && \
-    mkdir ${HOME}/analysis
+    mkdir ${HOME}/bin
 ENV PATH ${HOME}/bin:$PATH
 ################################################################################
 
