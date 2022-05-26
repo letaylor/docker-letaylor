@@ -82,7 +82,7 @@ RUN conda install mamba -n base -c conda-forge
 # download things to tmp
 WORKDIR ${HOME}/tmp
 
-# Example: install GCTA
+# Example: install GCTA to bin
 #RUN wget --quiet \
 #    https://cnsgenomics.com/software/gcta/gcta_1.92.1beta5.zip && \
 #    unzip gcta_1.92.1beta5.zip && \
@@ -120,19 +120,17 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 
 
 ############################ Setup: R packages #################################
-# Set up renv at ${HOME}
+# NOTE: Renv expects us to be in the ${HOME}
 WORKDIR ${HOME}
 
-# Make lib for R packages
+# Need to be root for library install in main R library
 USER root
-#RUN mkdir /usr/local/lib/R/site-library
+#RUN mkdir -p /usr/local/lib/R/site-library
+#RUN chown -R ${NB_USER}:${NB_USER} /usr/local/lib/R/site-library
+RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
-# make sure HOME files are owned by user
-RUN chown -R ${NB_USER}:${NB_USER} /usr/local/lib/R/site-library
+# Now continue to build the renv as the user
 USER ${NB_USER}
-
-# Install R packages as root
-#USER root
 
 # Copy renv information from local directory
 COPY renv.lock ${HOME}/tmp/renv.lock
@@ -144,9 +142,6 @@ COPY renv.lock ${HOME}/tmp/renv.lock
 # RUN R --vanilla -e "devtools::install_version('rvcheck', version = '0.1.8', repos = 'http://cran.us.r-project.org')"
 # RUN R --vanilla -e "BiocManager::install()"
 # RUN R --vanilla -e "BiocManager::install(c('simplifyEnrichment'))"
-
-# Install renv
-RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
 # Install the packages
 # NOTE: for Rhtslib one needs to run `apt-get install libbz2-dev liblzma-dev`
@@ -160,20 +155,21 @@ RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
     echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt = F)" >> ${HOME}/tmp/run.R && \
     echo "renv::activate()" >> ${HOME}/tmp/run.R
 
-# Clear out files no longer required
+# Install the packages
 RUN cat ${HOME}/tmp/run.R
 RUN Rscript ${HOME}/tmp/run.R
 RUN cat .Rprofile
-#RUN rm ${HOME}/tmp/renv.lock
-#RUN rm -r ~/.cache/R/renv/source  # Clear out renv tarballs
-#RUN R -e "library(optparse)"
+
+# Clear out files no longer required
+RUN rm -fr ${HOME}/.cache/R/renv/source  # Clear out renv tarballs
+RUN R -e "library(optparse)"  # Test the R install
 ################################################################################
 
 
 ############################ Setup: cleanup ####################################
 # clear tmp if there is anything in there...
 USER root
-#RUN rm -rf ${HOME}/tmp && rm -rf /tmp/*
+RUN rm -rf ${HOME}/tmp && rm -rf /tmp/*
 ################################################################################
 
 
