@@ -39,6 +39,7 @@ RUN apt-get update && \
         libgit2-dev \
         zlib1g-dev \
         build-essential \
+        libgeos-dev \
         libbz2-dev \
         liblzma-dev && \
     apt-get purge && \
@@ -136,7 +137,8 @@ USER ${NB_USER}
 COPY renv.lock ${HOME}/tmp/renv.lock
 
 # Install the packages
-# NOTE: For Rhtslib one needs to run `apt-get install libbz2-dev liblzma-dev`
+# NOTE: For Rhtslib, need to run `apt-get install libbz2-dev liblzma-dev`
+# NOTE: For rgeos (SeuratObject), need to run `apt-get install libgeos-dev`
 # NOTE: The below commands give access to external libraries and configs
 #       options(renv.config.user.profile = T)
 #       options(renv.config.user.library = T)
