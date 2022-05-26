@@ -21,6 +21,140 @@
       "Requirements": [
         "getopt"
       ]
+    },
+    "DESeq2": {
+      "Package": "DESeq2",
+      "Version": "1.36.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/DESeq2",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "2800b78",
+      "git_last_commit_date": "2022-04-26",
+      "Hash": "86ab1f2e3a303a1e0cebf0ef979d53bf",
+      "Requirements": [
+        "Biobase",
+        "BiocGenerics",
+        "BiocParallel",
+        "GenomicRanges",
+        "IRanges",
+        "Rcpp",
+        "RcppArmadillo",
+        "S4Vectors",
+        "SummarizedExperiment",
+        "genefilter",
+        "geneplotter",
+        "ggplot2",
+        "locfit"
+      ]
+    },
+    "edgeR": {
+      "Package": "edgeR",
+      "Version": "3.38.1",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/edgeR",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "e58bf52",
+      "git_last_commit_date": "2022-05-10",
+      "Hash": "c84f6d10656bec51cdd2d17a5826fc32",
+      "Requirements": [
+        "Rcpp",
+        "limma",
+        "locfit"
+      ]
+    },
+    "MAST": {
+      "Package": "MAST",
+      "Version": "1.22.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/MAST",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "d9fd0c9",
+      "git_last_commit_date": "2022-04-26",
+      "Hash": "834b563b41751c3e3b9dfbfd99e5bbe3",
+      "Requirements": [
+        "Biobase",
+        "BiocGenerics",
+        "S4Vectors",
+        "SingleCellExperiment",
+        "SummarizedExperiment",
+        "abind",
+        "data.table",
+        "ggplot2",
+        "plyr",
+        "progress",
+        "reshape2",
+        "stringr"
+      ]
+    },
+    "RUVSeq": {
+      "Package": "RUVSeq",
+      "Version": "1.30.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/RUVSeq",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "4964569",
+      "git_last_commit_date": "2022-04-26",
+      "Hash": "09f4b09000a2f2817b7f0073dd655098",
+      "Requirements": [
+        "Biobase",
+        "EDASeq",
+        "MASS",
+        "edgeR"
+      ]
+    },
+    "simplifyEnrichment": {
+      "Package": "simplifyEnrichment",
+      "Version": "1.6.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/simplifyEnrichment",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "cebc80f",
+      "git_last_commit_date": "2022-04-26",
+      "Hash": "e3467e54eb4467e79612ed2fdf8fbb0b",
+      "Requirements": [
+        "AnnotationDbi",
+        "BiocGenerics",
+        "ComplexHeatmap",
+        "GO.db",
+        "GOSemSim",
+        "GetoptLong",
+        "GlobalOptions",
+        "Matrix",
+        "circlize",
+        "clue",
+        "cluster",
+        "colorspace",
+        "digest",
+        "org.Hs.eg.db",
+        "proxyC",
+        "slam",
+        "tm"
+      ]
+    },
+    "clusterProfiler": {
+      "Package": "clusterProfiler",
+      "Version": "4.4.1",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/clusterProfiler",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "daad11f",
+      "git_last_commit_date": "2022-04-28",
+      "Hash": "4c20ca21c2b0507ba25891050d4f4b89",
+      "Requirements": [
+        "AnnotationDbi",
+        "DOSE",
+        "GO.db",
+        "GOSemSim",
+        "downloader",
+        "dplyr",
+        "enrichplot",
+        "magrittr",
+        "plyr",
+        "qvalue",
+        "rlang",
+        "tidyr",
+        "yulab.utils"
+      ]
     }
   }
 }
