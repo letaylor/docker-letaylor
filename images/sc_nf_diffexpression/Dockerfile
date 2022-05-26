@@ -105,12 +105,12 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 # install conda environment
 # NOTE: conda clean -atipy
 #   removes everything w/o confirmation (leaves all environments functional).
-#RUN mamba config --set always_yes yes --set changeps1 no && \
-#    mamba update mamba --yes && \
-#    mamba env update -v -n root --file ${HOME}/tmp/environment.yml && \
-#    mamba list --name root && \
-#    mamba clean -atipy && \
-#    rm ${HOME}/tmp/environment.yml
+RUN mamba config --set always_yes yes --set changeps1 no && \
+    mamba update mamba --yes && \
+    mamba env update -v -n root --file ${HOME}/tmp/environment.yml && \
+    mamba list --name root && \
+    mamba clean -atipy && \
+    rm ${HOME}/tmp/environment.yml
 
 # export the conda path to force container_env since .bashrc necessarily
 # sourced when when the image is used
