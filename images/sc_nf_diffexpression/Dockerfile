@@ -134,14 +134,6 @@ USER ${NB_USER}
 # Copy renv information from local directory
 COPY renv.lock ${HOME}/tmp/renv.lock
 
-# Install bioconductor and
-# RUN R --vanilla -e "install.packages(c('BiocManager', 'devtools'), repos = c(CRAN = 'https://cloud.r-project.org'))"
-# NOTE: need to install rvcheck=0.1.8 to resolve error in clusterProfiler:
-#       object 'get_fun_from_pkg' not found
-# RUN R --vanilla -e "devtools::install_version('rvcheck', version = '0.1.8', repos = 'http://cran.us.r-project.org')"
-# RUN R --vanilla -e "BiocManager::install()"
-# RUN R --vanilla -e "BiocManager::install(c('simplifyEnrichment'))"
-
 # Install the packages
 # NOTE: for Rhtslib one needs to run `apt-get install libbz2-dev liblzma-dev`
 RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
