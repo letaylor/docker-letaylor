@@ -122,7 +122,7 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 ############################ Setup: R packages #################################
 # Make lib for R packages
 USER root
-RUN mkdir /usr/local/lib/R/site-library
+#RUN mkdir /usr/local/lib/R/site-library
 
 # make sure HOME files are owned by user
 RUN chown -R ${NB_USER}:${NB_USER} /usr/local/lib/R/site-library
