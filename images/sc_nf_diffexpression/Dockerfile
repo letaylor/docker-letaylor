@@ -139,7 +139,9 @@ COPY renv.lock ${HOME}/tmp/renv.lock
 # Install the packages
 # NOTE: For Rhtslib, need to run `apt-get install libbz2-dev liblzma-dev`
 # NOTE: For rgeos (SeuratObject), need to run `apt-get install libgeos-dev`
-# NOTE: The below commands give access to external libraries and configs
+# NOTE: The below commands give access to default libraries and configs
+#       in the rocker image. Below they are set in R, but we set them in
+#       environment variables.
 #       options(renv.config.user.profile = T)
 #       options(renv.config.user.library = T)
 #       options(renv.config.external.libraries = .libPaths())
@@ -152,9 +154,10 @@ ENV RENV_CONSENT TRUE
 #    echo "options(renv.config.external.libraries = .libPaths())" >> ${HOME}/.Rprofile && \
 #    echo "options(renv.consent = T)" >> ${HOME}/.Rprofile && \
 #    echo "options(renv.use.cache = F)" >> ${HOME}/.Rprofile
+# NOTE: Dropped the below command
+#       echo "renv::init(bare = F, force = T)" >> ${HOME}/tmp/run.R && \
 RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
     echo "options(renv.consent = T)" >> ${HOME}/tmp/run.R && \
-    echo "renv::init(bare = F, force = T)" >> ${HOME}/tmp/run.R && \
     echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt = F)" >> ${HOME}/tmp/run.R && \
     echo "renv::activate()" >> ${HOME}/tmp/run.R
 
