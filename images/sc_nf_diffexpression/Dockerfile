@@ -120,9 +120,13 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 
 
 ############################ Setup: R packages #################################
+# Make lib for R packages
+USER root
+RUN mkdir /usr/local/lib/R/site-library
+
 # make sure HOME files are owned by user
-#RUN chown -R ${NB_USER}:${NB_USER} ${HOME}
-#USER ${NB_USER}
+RUN chown -R ${NB_USER}:${NB_USER} /usr/local/lib/R/site-library
+USER ${NB_USER}
 
 # Install R packages as root
 #USER root
@@ -165,7 +169,7 @@ RUN rm ${HOME}/tmp/renv.lock
 ############################ Setup: cleanup ####################################
 # clear tmp if there is anything in there...
 USER root
-RUN rm -rf ${HOME}/tmp && rm -rf /tmp/*
+#RUN rm -rf ${HOME}/tmp && rm -rf /tmp/*
 ################################################################################
 
 
