@@ -143,10 +143,10 @@ COPY renv.lock ${HOME}/tmp/renv.lock
 #       options(renv.config.user.profile = T)
 #       options(renv.config.user.library = T)
 #       options(renv.config.external.libraries = .libPaths())
-#ENV RENV_CONFIG_USER_PROFILE TRUE
-#ENV RENV_CONFIG_USER_LIBRARY TRUE
+ENV RENV_CONFIG_USER_PROFILE TRUE
+ENV RENV_CONFIG_USER_LIBRARY TRUE
 #ENV RENV_CONFIG_EXTERNAL_LIBRARIES /usr/local/lib/R/library:/usr/local/lib/R/site-library
-#ENV RENV_CONSENT TRUE
+ENV RENV_CONSENT TRUE
 # RUN echo "options(renv.config.user.profile = T)" >> ${HOME}/.Rprofile && \
 #    echo "options(renv.config.user.library = T)" >> ${HOME}/.Rprofile && \
 #    echo "options(renv.config.external.libraries = .libPaths())" >> ${HOME}/.Rprofile && \
