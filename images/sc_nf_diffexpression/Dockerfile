@@ -131,7 +131,7 @@ USER root
 RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
 # Now continue to build the renv as the user
-USER ${NB_USER}
+#USER ${NB_USER}
 
 # Copy renv information from local directory
 COPY renv.lock ${HOME}/tmp/renv.lock
