@@ -126,8 +126,6 @@ WORKDIR ${HOME}
 
 # Need to be root for library install in main R library
 USER root
-#RUN mkdir -p /usr/local/lib/R/site-library
-#RUN chown -R ${NB_USER}:${NB_USER} /usr/local/lib/R/site-library
 RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
 # Now continue to build the renv as the user
@@ -147,7 +145,7 @@ COPY renv.lock ${HOME}/tmp/renv.lock
 #       options(renv.config.external.libraries = .libPaths())
 ENV RENV_CONFIG_USER_PROFILE TRUE
 ENV RENV_CONFIG_USER_LIBRARY TRUE
-ENV RENV_CONFIG_EXTERNAL_LIBRARIES "/usr/local/lib/R/library:/usr/local/lib/R/site-library"
+ENV RENV_CONFIG_EXTERNAL_LIBRARIES "/usr/lib/R/library:/usr/lib/R/site-library"
 ENV RENV_CONSENT TRUE
 # RUN echo "options(renv.config.user.profile = T)" >> ${HOME}/.Rprofile && \
 #    echo "options(renv.config.user.library = T)" >> ${HOME}/.Rprofile && \
