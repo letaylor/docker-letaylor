@@ -102,6 +102,63 @@
         "edgeR"
       ]
     },
+    "glmGamPoi": {
+      "Package": "glmGamPoi",
+      "Version": "1.8.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/glmGamPoi",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "b723d61",
+      "git_last_commit_date": "2022-04-26",
+      "Hash": "06b4426197431f8bfc48aa68596c69ee",
+      "Requirements": [
+        "BiocGenerics",
+        "DelayedArray",
+        "DelayedMatrixStats",
+        "HDF5Array",
+        "Rcpp",
+        "RcppArmadillo",
+        "SummarizedExperiment",
+        "beachmat",
+        "matrixStats"
+      ]
+    },
+    "IHW": {
+      "Package": "IHW",
+      "Version": "1.24.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/IHW",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "f137f5c",
+      "git_last_commit_date": "2022-04-26",
+      "Hash": "dca8a263962a07a504770487c7395341",
+      "Requirements": [
+        "BiocGenerics",
+        "fdrtool",
+        "lpsymphony",
+        "slam"
+      ]
+    },
+    "fgsea": {
+      "Package": "fgsea",
+      "Version": "1.22.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/fgsea",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "e4e203a",
+      "git_last_commit_date": "2022-04-26",
+      "Hash": "ad0b3b8ca19bcc3b29b10b85d37081f2",
+      "Requirements": [
+        "BH",
+        "BiocParallel",
+        "Matrix",
+        "Rcpp",
+        "data.table",
+        "fastmatch",
+        "ggplot2",
+        "gridExtra"
+      ]
+    },
     "simplifyEnrichment": {
       "Package": "simplifyEnrichment",
       "Version": "1.6.0",
@@ -155,6 +212,140 @@
         "tidyr",
         "yulab.utils"
       ]
+    },
+    "rrvgo": {
+      "Package": "rrvgo",
+      "Version": "1.8.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/rrvgo",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "de1ac17",
+      "git_last_commit_date": "2022-04-26",
+      "Hash": "ce790f9e6965cba0513eaa75f47764aa",
+      "Requirements": [
+        "AnnotationDbi",
+        "GO.db",
+        "GOSemSim",
+        "ggplot2",
+        "ggrepel",
+        "pheatmap",
+        "shiny",
+        "tm",
+        "treemap",
+        "wordcloud"
+      ]
+    },
+    "GOSemSim": {
+      "Package": "GOSemSim",
+      "Version": "2.22.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/GOSemSim",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "fd74aeb",
+      "git_last_commit_date": "2022-04-26",
+      "Hash": "9241c4b9bcff07f7b6bbdc88fd66ea5a",
+      "Requirements": [
+        "AnnotationDbi",
+        "GO.db",
+        "Rcpp"
+      ]
+    },
+    "enrichplot": {
+      "Package": "enrichplot",
+      "Version": "1.16.1",
+      "Source": "Bioconductor",
+      "Remotes": "YuLab-SMU/tidydr",
+      "git_url": "https://git.bioconductor.org/packages/enrichplot",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "cff77b6",
+      "git_last_commit_date": "2022-05-04",
+      "Hash": "784df85d54c1b0ae4c0fbcaaab3ac112",
+      "Requirements": [
+        "DOSE",
+        "GOSemSim",
+        "RColorBrewer",
+        "aplot",
+        "ggplot2",
+        "ggraph",
+        "ggtree",
+        "igraph",
+        "magrittr",
+        "plyr",
+        "purrr",
+        "reshape2",
+        "scatterpie",
+        "shadowtext",
+        "yulab.utils"
+      ]
+    },
+    "ComplexHeatmap": {
+      "Package": "ComplexHeatmap",
+      "Version": "2.12.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/ComplexHeatmap",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "8a5f060",
+      "git_last_commit_date": "2022-04-26",
+      "Hash": "dfc85f03afca224993b96d7b87577153",
+      "Requirements": [
+        "GetoptLong",
+        "GlobalOptions",
+        "IRanges",
+        "RColorBrewer",
+        "circlize",
+        "clue",
+        "codetools",
+        "colorspace",
+        "digest",
+        "doParallel",
+        "foreach",
+        "matrixStats",
+        "png"
+      ]
+    },
+    "umap": {
+      "Package": "umap",
+      "Version": "0.2.8.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "bdac3583bca22a4efbee25a1cd8f3fc9",
+      "Requirements": [
+        "Matrix",
+        "RSpectra",
+        "Rcpp",
+        "openssl",
+        "reticulate"
+      ]
+    },
+    "tm": {
+      "Package": "tm",
+      "Version": "0.7-8",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "608413cbdf64d418b6a33e6c3d4d3b25",
+      "Requirements": [
+        "BH",
+        "NLP",
+        "Rcpp",
+        "slam",
+        "xml2"
+      ]
+    },
+    "xml2": {
+      "Package": "xml2",
+      "Version": "1.3.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "40682ed6a969ea5abfd351eb67833adc",
+      "Requirements": []
+    },
+    "wesanderson": {
+      "Package": "wesanderson",
+      "Version": "0.3.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "42f92f1e9ef722355959ec1f7c459636",
+      "Requirements": []
     }
   }
 }
