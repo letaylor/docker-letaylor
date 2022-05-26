@@ -120,6 +120,9 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 
 
 ############################ Setup: R packages #################################
+# Set up renv at ${HOME}
+WORKDIR ${HOME}
+
 # Make lib for R packages
 USER root
 #RUN mkdir /usr/local/lib/R/site-library
@@ -149,7 +152,7 @@ RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-p
 # NOTE: for Rhtslib one needs to run `apt-get install libbz2-dev liblzma-dev`
 RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
     echo "options(renv.consent = T)" >> ${HOME}/tmp/run.R && \
-    echo "options(renv.use.cache = T)" >> ${HOME}/tmp/run.R && \
+    echo "options(renv.use.cache = F)" >> ${HOME}/tmp/run.R && \
     echo "options(renv.config.user.profile = T)" >> ${HOME}/tmp/run.R && \
     echo "options(renv.config.user.library = T)" >> ${HOME}/tmp/run.R && \
     echo "options(renv.config.external.libraries = .libPaths())" >> ${HOME}/tmp/run.R && \
@@ -161,7 +164,8 @@ RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
 RUN cat ${HOME}/tmp/run.R
 RUN Rscript ${HOME}/tmp/run.R
 RUN cat .Rprofile
-RUN rm ${HOME}/tmp/renv.lock
+#RUN rm ${HOME}/tmp/renv.lock
+#RUN rm -r ~/.cache/R/renv/source  # Clear out renv tarballs
 #RUN R -e "library(optparse)"
 ################################################################################
 
