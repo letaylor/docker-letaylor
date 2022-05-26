@@ -147,13 +147,13 @@ RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
     echo "renv::activate()" >> ${HOME}/tmp/run.R
 
 # Install the packages
-RUN cat ${HOME}/tmp/run.R
+#RUN cat ${HOME}/tmp/run.R
 RUN Rscript ${HOME}/tmp/run.R
-RUN cat .Rprofile
+#RUN cat .Rprofile
 
 # Clear out files no longer required
 RUN rm -fr ${HOME}/.cache/R/renv/source  # Clear out renv tarballs
-RUN R -e "library(optparse)"  # Test the R install
+#RUN R -e "library(optparse)"  # Test the R install
 ################################################################################
 
 
