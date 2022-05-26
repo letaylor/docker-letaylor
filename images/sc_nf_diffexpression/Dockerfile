@@ -125,7 +125,7 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 #USER ${NB_USER}
 
 # Install R packages as root
-USER root
+#USER root
 
 # Copy renv information from local directory
 COPY renv.lock ${HOME}/tmp/renv.lock
@@ -145,6 +145,7 @@ RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-p
 # NOTE: for Rhtslib one needs to run `apt-get install libbz2-dev liblzma-dev`
 RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
     echo "options(renv.consent = T)" >> ${HOME}/tmp/run.R && \
+    echo "options(renv.use.cache = T)" >> ${HOME}/tmp/run.R && \
     echo "options(renv.config.user.profile = T)" >> ${HOME}/tmp/run.R && \
     echo "options(renv.config.user.library = T)" >> ${HOME}/tmp/run.R && \
     echo "options(renv.config.external.libraries = .libPaths())" >> ${HOME}/tmp/run.R && \
