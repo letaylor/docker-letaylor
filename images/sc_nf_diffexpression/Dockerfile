@@ -145,7 +145,7 @@ COPY renv.lock ${HOME}/tmp/renv.lock
 #       options(renv.config.external.libraries = .libPaths())
 ENV RENV_CONFIG_USER_PROFILE TRUE
 ENV RENV_CONFIG_USER_LIBRARY TRUE
-ENV RENV_CONFIG_EXTERNAL_LIBRARIES "/usr/lib/R/library:/usr/lib/R/site-library"
+#ENV RENV_CONFIG_EXTERNAL_LIBRARIES "/usr/lib/R/library:/usr/lib/R/site-library"
 ENV RENV_CONSENT TRUE
 # RUN echo "options(renv.config.user.profile = T)" >> ${HOME}/.Rprofile && \
 #    echo "options(renv.config.user.library = T)" >> ${HOME}/.Rprofile && \
@@ -166,7 +166,7 @@ RUN Rscript ${HOME}/tmp/run.R
 
 # Clear out files no longer required
 RUN rm -fr ${HOME}/.cache/R/renv/source  # Clear out renv tarballs
-#RUN R -e "library(optparse)"  # Test the R install
+RUN R -e "library(DESeq2)"  # Test the R install
 ################################################################################
 
 
