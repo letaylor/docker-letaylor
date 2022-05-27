@@ -122,7 +122,11 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 
 ############################ Setup: R packages #################################
 # Set the R libs
-ENV R_LIBS /usr/local/lib/R/library:/usr/lib/R/library
+RUN if [ "${R_LIBS}" = "" ]; \
+    then export R_LIBS=/usr/local/lib/R/library:/usr/lib/R/library; \
+    else export R_LIBS=/usr/local/lib/R/library:/usr/lib/R/library:${R_LIBS}; \
+    fi
+ENV R_LIBS ${R_LIBS}
 ENV R_LIBS_SITE /usr/local/lib/R/site-library/:/usr/lib/R/site-library
 ENV R_LIBS_USER ${HOME}/R/x86_64-pc-linux-gnu-library/4.2
 
