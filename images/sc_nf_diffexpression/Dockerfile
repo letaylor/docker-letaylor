@@ -105,12 +105,12 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 # install conda environment
 # NOTE: conda clean -atipy
 #   removes everything w/o confirmation (leaves all environments functional).
-#RUN mamba config --set always_yes yes --set changeps1 no && \
-#    mamba update mamba --yes && \
-#    mamba env update -v -n root --file ${HOME}/tmp/environment.yml && \
-#    mamba list --name root && \
-#    mamba clean -atipy && \
-#    rm ${HOME}/tmp/environment.yml
+RUN mamba config --set always_yes yes --set changeps1 no && \
+   mamba update mamba --yes && \
+   mamba env update -v -n root --file ${HOME}/tmp/environment.yml && \
+   mamba list --name root && \
+   mamba clean -atipy && \
+   rm ${HOME}/tmp/environment.yml
 
 # export the conda path to force container_env since .bashrc necessarily
 # sourced when when the image is used
@@ -161,15 +161,10 @@ ENV RENV_CONFIG_USER_PROFILE TRUE
 ENV RENV_CONFIG_USER_LIBRARY TRUE
 ENV RENV_CONFIG_EXTERNAL_LIBRARIES ${R_LIBS_USER}:${R_LIBS_SITE}:${R_LIBS}
 ENV RENV_CONSENT TRUE
-RUN echo "R_LIBS ${R_LIBS}"
-RUN echo "R_LIBS_SITE ${R_LIBS_SITE}"
-RUN echo "R_LIBS_USER ${R_LIBS_USER}"
-RUN echo "RENV_CONFIG_EXTERNAL_LIBRARIES ${RENV_CONFIG_EXTERNAL_LIBRARIES}"
-# RUN echo "options(renv.config.user.profile = T)" >> ${HOME}/.Rprofile && \
-#    echo "options(renv.config.user.library = T)" >> ${HOME}/.Rprofile && \
-#    echo "options(renv.config.external.libraries = .libPaths())" >> ${HOME}/.Rprofile && \
-#    echo "options(renv.consent = T)" >> ${HOME}/.Rprofile && \
-#    echo "options(renv.use.cache = F)" >> ${HOME}/.Rprofile
+#RUN echo "R_LIBS ${R_LIBS}" && \
+#    echo "R_LIBS_SITE ${R_LIBS_SITE}" && \
+#    echo "R_LIBS_USER ${R_LIBS_USER}" && \
+#    echo "RENV_CONFIG_EXTERNAL_LIBRARIES ${RENV_CONFIG_EXTERNAL_LIBRARIES}"
 # NOTE: Dropped the below command
 #       echo "renv::init(bare = F, force = T)" >> ${HOME}/tmp/run.R && \
 RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
