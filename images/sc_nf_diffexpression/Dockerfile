@@ -152,6 +152,10 @@ ENV RENV_CONFIG_USER_PROFILE TRUE
 ENV RENV_CONFIG_USER_LIBRARY TRUE
 ENV RENV_CONFIG_EXTERNAL_LIBRARIES ${R_LIBS_USER}:${R_LIBS_SITE}:${R_LIBS}
 ENV RENV_CONSENT TRUE
+RUN echo "R_LIBS ${R_LIBS}"
+RUN echo "R_LIBS_SITE ${R_LIBS_SITE}"
+RUN echo "R_LIBS_USER ${R_LIBS_USER}"
+RUN echo "RENV_CONFIG_EXTERNAL_LIBRARIES ${RENV_CONFIG_EXTERNAL_LIBRARIES}"
 # RUN echo "options(renv.config.user.profile = T)" >> ${HOME}/.Rprofile && \
 #    echo "options(renv.config.user.library = T)" >> ${HOME}/.Rprofile && \
 #    echo "options(renv.config.external.libraries = .libPaths())" >> ${HOME}/.Rprofile && \
