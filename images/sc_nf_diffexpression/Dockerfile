@@ -122,9 +122,9 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 
 ############################ Setup: R packages #################################
 # Set the R libs
-ENV R_LIBS /usr/local/lib/R/library:/usr/lib/R/library:${R_LIBS}
-ENV R_LIBS_SITE /usr/local/lib/R/site-library/:/usr/lib/R/site-library:${R_LIBS_SITE}
-ENV R_LIBS_USER ${HOME}/R/x86_64-pc-linux-gnu-library/4.2:${R_LIBS_USER}
+ENV R_LIBS /usr/local/lib/R/library:/usr/lib/R/library
+ENV R_LIBS_SITE /usr/local/lib/R/site-library/:/usr/lib/R/site-library
+ENV R_LIBS_USER ${HOME}/R/x86_64-pc-linux-gnu-library/4.2
 
 # NOTE: Renv expects us to be in the ${HOME}
 WORKDIR ${HOME}
