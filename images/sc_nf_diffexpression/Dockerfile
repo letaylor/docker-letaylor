@@ -1,5 +1,4 @@
-FROM rocker/tidyverse:4.2.0
-# FROM rocker/r-base:4.2.0
+FROM rocker/r-base:4.2.0
 # FROM rocker/tidyverse:4.2.0  # alternative
 
 
@@ -106,12 +105,12 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 # install conda environment
 # NOTE: conda clean -atipy
 #   removes everything w/o confirmation (leaves all environments functional).
-RUN mamba config --set always_yes yes --set changeps1 no && \
-    mamba update mamba --yes && \
-    mamba env update -v -n root --file ${HOME}/tmp/environment.yml && \
-    mamba list --name root && \
-    mamba clean -atipy && \
-    rm ${HOME}/tmp/environment.yml
+#RUN mamba config --set always_yes yes --set changeps1 no && \
+#    mamba update mamba --yes && \
+#    mamba env update -v -n root --file ${HOME}/tmp/environment.yml && \
+#    mamba list --name root && \
+#    mamba clean -atipy && \
+#    rm ${HOME}/tmp/environment.yml
 
 # export the conda path to force container_env since .bashrc necessarily
 # sourced when when the image is used
@@ -122,6 +121,11 @@ RUN mamba config --set always_yes yes --set changeps1 no && \
 
 
 ############################ Setup: R packages #################################
+# Set the R libs
+ENV R_LIBS /usr/local/lib/R/library:/usr/lib/R/library:${R_LIBS}
+ENV R_LIBS_SITE /usr/local/lib/R/site-library/:/usr/lib/R/site-library:${R_LIBS_SITE}
+ENV R_LIBS_USER ${HOME}/R/x86_64-pc-linux-gnu-library/4.2:${R_LIBS_USER}
+
 # NOTE: Renv expects us to be in the ${HOME}
 WORKDIR ${HOME}
 
@@ -146,7 +150,7 @@ COPY renv.lock ${HOME}/tmp/renv.lock
 #       options(renv.config.external.libraries = .libPaths())
 ENV RENV_CONFIG_USER_PROFILE TRUE
 ENV RENV_CONFIG_USER_LIBRARY TRUE
-ENV RENV_CONFIG_EXTERNAL_LIBRARIES "/usr/lib/R/library:/usr/lib/R/site-library"
+ENV RENV_CONFIG_EXTERNAL_LIBRARIES ${R_LIBS_USER}:${R_LIBS_SITE}:${R_LIBS}
 ENV RENV_CONSENT TRUE
 # RUN echo "options(renv.config.user.profile = T)" >> ${HOME}/.Rprofile && \
 #    echo "options(renv.config.user.library = T)" >> ${HOME}/.Rprofile && \
@@ -167,7 +171,7 @@ RUN Rscript ${HOME}/tmp/run.R
 
 # Clear out files no longer required
 RUN rm -fr ${HOME}/.cache/R/renv/source  # Clear out renv tarballs
-RUN R -e "library(DESeq2)"  # Test the R install
+#RUN R -e "library(optparse)"  # Test the R install
 ################################################################################
 
 
