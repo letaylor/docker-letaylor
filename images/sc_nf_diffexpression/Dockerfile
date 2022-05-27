@@ -122,11 +122,16 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 
 ############################ Setup: R packages #################################
 # Set the R libs
-RUN if [ "${R_LIBS}" = "" ]; \
-    then export R_LIBS=/usr/local/lib/R/library:/usr/lib/R/library; \
-    else export R_LIBS=/usr/local/lib/R/library:/usr/lib/R/library:${R_LIBS}; \
-    fi
-ENV R_LIBS ${R_LIBS}
+# NOTE: As of 2022-05-27, none of the R libraries are set in the Docker image.
+#       R raised errors when doing
+#       ENV R_LIBS /usr/local/lib/R/library:/usr/lib/R/library:${R_LIBS}
+#       ...which would preserve any values of ${R_LIBS} in the future
+#       The error is raised when ${R_LIBS} = "" and trailing : is at the end
+#       of the path. An if, then else bash clause did not solve the issue
+#       because Docker RUN export VAR do not track with the image.
+#       The easiest workaround for all of this was to hard code these ENV vars.
+#       WARNING: This may cause issues in the future.
+ENV R_LIBS /usr/local/lib/R/library:/usr/lib/R/library
 ENV R_LIBS_SITE /usr/local/lib/R/site-library/:/usr/lib/R/site-library
 ENV R_LIBS_USER ${HOME}/R/x86_64-pc-linux-gnu-library/4.2
 
