@@ -1,4 +1,5 @@
-FROM rocker/r-base:4.2.0
+FROM rocker/tidyverse:4.2.0
+# FROM rocker/r-base:4.2.0
 # FROM rocker/tidyverse:4.2.0  # alternative
 
 
