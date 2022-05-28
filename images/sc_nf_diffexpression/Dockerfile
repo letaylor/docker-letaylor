@@ -165,12 +165,15 @@ ENV RENV_CONSENT TRUE
 #    echo "R_LIBS_SITE ${R_LIBS_SITE}" && \
 #    echo "R_LIBS_USER ${R_LIBS_USER}" && \
 #    echo "RENV_CONFIG_EXTERNAL_LIBRARIES ${RENV_CONFIG_EXTERNAL_LIBRARIES}"
-# NOTE: Dropped the below command
+# NOTE: Dropped the below command because not necessary
 #       echo "renv::init(bare = F, force = T)" >> ${HOME}/tmp/run.R && \
+# NOTE: Dropped the below command because with R_LIBS, R_LIBS_SITE, and
+#       R_LIBS_USER set, the renv does not need to be activated. R knows it
+#       automatically.
+#       echo "renv::activate()" >> ${HOME}/tmp/run.R
 RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
     echo "options(renv.consent = T)" >> ${HOME}/tmp/run.R && \
-    echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt = F)" >> ${HOME}/tmp/run.R && \
-    echo "renv::activate()" >> ${HOME}/tmp/run.R
+    echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt = F)" >> ${HOME}/tmp/run.R
 
 # Install the packages
 #RUN cat ${HOME}/tmp/run.R
