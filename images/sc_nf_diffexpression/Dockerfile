@@ -55,7 +55,10 @@ RUN adduser --disabled-password \
 
 # set up the user directory structure
 RUN mkdir ${HOME}/tmp && \
-    mkdir ${HOME}/bin
+    mkdir ${HOME}/bin && \
+    mkdir ${HOME}/analysis && \
+    mkdir ${HOME}/.cache && \
+    mkdir ${HOME}/.cache/matplotlib
 ENV PATH ${HOME}/bin:$PATH
 ################################################################################
 
@@ -117,6 +120,9 @@ RUN mamba config --set always_yes yes --set changeps1 no && \
 # ENV PATH ${HOME}/conda/envs/container_env/bin:$PATH
 # ENV CONDA_DEFAULT_ENV container_env
 # ENV CONDA_PREFIX ${HOME}/conda/envs/container_env
+
+# Set up matplotlib requirements
+ENV MPLCONFIGDIR ${HOME}/.cache/matplotlib
 ################################################################################
 
 
