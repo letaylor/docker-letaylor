@@ -1961,6 +1961,16 @@
         "rlang"
       ]
     },
+    "ggnewscale": {
+      "Package": "ggnewscale",
+      "Version": "0.4.7",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "df57a381783476d083e9f7350d382c3d",
+      "Requirements": [
+        "ggplot2"
+      ]
+    },
     "ggplot2": {
       "Package": "ggplot2",
       "Version": "3.3.6",
@@ -3099,6 +3109,14 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "227045be9aee47e6dda9bb38ac870d67",
+      "Requirements": []
+    },
+    "renv": {
+      "Package": "renv",
+      "Version": "0.15.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "c1078316e1d4f70275fc1ea60c0bc431",
       "Requirements": []
     },
     "reprex": {
