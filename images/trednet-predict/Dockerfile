@@ -1,4 +1,5 @@
-FROM rocker/r-base:4.3.1
+FROM ubuntu:23.10
+# FROM rocker/r-base:4.3.1
 # FROM rocker/tidyverse:4.3.1  # alternative
 
 
