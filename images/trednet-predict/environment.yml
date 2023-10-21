@@ -4,7 +4,7 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - biopython=1.81=py312h98912ed_1
+  - biopython
   - pybedtools
   - h5py
   - keras
