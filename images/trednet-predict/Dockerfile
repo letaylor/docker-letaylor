@@ -1,5 +1,5 @@
-FROM rocker/r-base:4.2.0
-# FROM rocker/tidyverse:4.2.0  # alternative
+FROM rocker/r-base:4.3.1
+# FROM rocker/tidyverse:4.3.1  # alternative
 
 
 ############################ Setup: OS #########################################

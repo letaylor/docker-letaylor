@@ -4,11 +4,10 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - biopython
-  - h5py
-  - keras
-  - scikit-learn
-  - numpy
-  - pandas
-  - matplotlib-base
+  - biopython=1.78
+  - h5py=3.9.0
+  - keras=2.12.0
+  - scikit-learn=1.3.0
+  - pandas=2.1.1
+  - matplotlib-base=3.7.2
 
