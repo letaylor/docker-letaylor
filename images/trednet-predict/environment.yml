@@ -1,0 +1,15 @@
+channels:
+  - anaconda
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - biopython=1.81=py312h98912ed_1
+  - pybedtools
+  - h5py
+  - keras
+  - sklearn
+  - numpy
+  - pandas
+  - matplotlib-base
+
