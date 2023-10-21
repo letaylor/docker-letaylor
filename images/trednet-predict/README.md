@@ -3,8 +3,12 @@
 
 ```bash
 # Pull the image
-docker pull letaylor/sc_nf_diffexpression:latest
+docker pull letaylor/trednet-predict:latest
 
 # Run interactive session
-docker run --rm -it letaylor/sc_nf_diffexpression:latest bash
+docker run --rm -it letaylor/trednet-predict:latest bash
 ```
+
+# Notes
+
+ Missing `  - pybedtools`
