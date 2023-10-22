@@ -125,7 +125,7 @@ RUN mamba config --set always_yes yes --set changeps1 no && \
 # Set up matplotlib requirements
 ENV MPLCONFIGDIR ${HOME}/.cache/matplotlib
 
-RUN pip install pybedtools
+RUN pip install pybedtools==0.9.1
 ################################################################################
 
 

@@ -11,4 +11,4 @@ docker run --rm -it letaylor/trednet-predict:latest bash
 
 # Notes
 
- Missing `  - pybedtools`
+Due to conda install issues, `pybedtools` installed via pip in the Dockerfile.
