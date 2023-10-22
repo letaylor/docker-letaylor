@@ -125,6 +125,10 @@ RUN mamba config --set always_yes yes --set changeps1 no && \
 # Set up matplotlib requirements
 ENV MPLCONFIGDIR ${HOME}/.cache/matplotlib
 
+# Install via pip a few packages that would not work with conda. 
+# To fix the conda issue, we would just need to compile our own version
+# of the package(s). 
+RUN pip install pysam==0.22.0
 RUN pip install pybedtools==0.9.1
 ################################################################################
 
