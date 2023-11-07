@@ -122,9 +122,9 @@ RUN mamba config --set always_yes yes --set changeps1 no && \
 
 # export the conda path to force container_env since .bashrc necessarily
 # sourced when when the image is used
-# ENV PATH ${HOME}/conda/envs/container_env/bin:$PATH
-# ENV CONDA_DEFAULT_ENV container_env
-# ENV CONDA_PREFIX ${HOME}/conda/envs/container_env
+ENV PATH ${HOME}/conda/envs/runtime_env/bin:$PATH
+ENV CONDA_DEFAULT_ENV runtime_env
+ENV CONDA_PREFIX ${HOME}/conda/envs/runtime_env
 
 # Set up matplotlib requirements
 ENV MPLCONFIGDIR ${HOME}/.cache/matplotlib
