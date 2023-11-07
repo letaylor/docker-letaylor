@@ -109,10 +109,14 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 # install conda environment
 # NOTE: conda clean -atipy
 #   removes everything w/o confirmation (leaves all environments functional).
+# NOTE: if packages use the most recent version of python underlying conda
+#   and mamba, you can set the environment name to "root". Otherwise, you need 
+#   to set it to a different name so that the proper python version is
+#   installed.
 RUN mamba config --set always_yes yes --set changeps1 no && \
    mamba update mamba --yes && \
-   mamba env create -n root --file ${HOME}/tmp/environment.yml && \
-   mamba list --name root && \
+   mamba env create -n runtime_env --file ${HOME}/tmp/environment.yml && \
+   mamba list --name runtime_env && \
    mamba clean -atipy && \
    rm ${HOME}/tmp/environment.yml
 
