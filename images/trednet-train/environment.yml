@@ -3,5 +3,5 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - tensorflow-gpu
+  - tensorflow-gpu=1.4.1
   - keras-gpu
