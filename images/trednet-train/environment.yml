@@ -5,6 +5,3 @@ channels:
 dependencies:
   - tensorflow-gpu
   - keras-gpu
-  - scikit-learn
-  - pandas
-  - snakemake-minimal=7.32.4
