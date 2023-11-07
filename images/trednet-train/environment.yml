@@ -4,4 +4,3 @@ channels:
   - defaults
 dependencies:
   - tensorflow-gpu=1.4.1
-  - keras-gpu
