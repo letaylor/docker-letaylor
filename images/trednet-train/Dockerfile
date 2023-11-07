@@ -111,8 +111,8 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 #   removes everything w/o confirmation (leaves all environments functional).
 RUN mamba config --set always_yes yes --set changeps1 no && \
    mamba update mamba --yes && \
-   mamba env update -v -n root --file ${HOME}/tmp/environment.yml && \
-   mamba list --name root && \
+   mamba env create -n test --file ${HOME}/tmp/environment.yml && \
+   mamba list --name test && \
    mamba clean -atipy && \
    rm ${HOME}/tmp/environment.yml
 
