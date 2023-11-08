@@ -1,6 +1,7 @@
 channels:
   - anaconda
   - conda-forge
+  - bioconda
   - defaults
 dependencies:
   - tensorflow-gpu
