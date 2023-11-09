@@ -11,3 +11,4 @@ dependencies:
   - matplotlib-base
   - snakemake-minimal
   - h5py
+  - bedtools
