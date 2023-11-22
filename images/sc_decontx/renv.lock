@@ -1,12 +1,35 @@
 {
   "R": {
     "Version": "4.3.1",
-    "Repositories": [
+   " Repositories": [
+      {
+        "Name": "BioCsoft",
+        "URL": "https://bioconductor.org/packages/3.18/bioc"
+      },
+      {
+        "Name": "BioCann",
+        "URL": "https://bioconductor.org/packages/3.18/data/annotation"
+      },
+      {
+        "Name": "BioCexp",
+        "URL": "https://bioconductor.org/packages/3.18/data/experiment"
+      },
+      {
+        "Name": "BioCworkflows",
+        "URL": "https://bioconductor.org/packages/3.18/workflows"
+      },
+      {
+        "Name": "BioCbooks",
+        "URL": "https://bioconductor.org/packages/3.18/books"
+      },
       {
         "Name": "CRAN",
         "URL": "http://archive.linux.duke.edu/cran"
       }
     ]
+  },
+  "Bioconductor": {
+    "Version": "3.18"
   },
   "Packages": {
     "Seurat": {
