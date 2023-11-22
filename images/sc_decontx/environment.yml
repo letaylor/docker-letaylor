@@ -6,3 +6,5 @@ channels:
   - defaults
 dependencies:
   - r-renv=0.15.3
+  - anndata
+  - pandas
