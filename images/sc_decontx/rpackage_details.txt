@@ -1,0 +1,8 @@
+Package	Version
+AnnotationDbi	1.50.3
+renv	0.15.3
+markdown	1.0
+mime	0.7
+Rcpp	1.0.5
+RcppArmadillo	0.9.900.2.0
+RcppEigen	0.3.3.9.1

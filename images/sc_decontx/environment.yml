@@ -1,0 +1,8 @@
+channels:
+  - letaylor
+  - conda-forge
+  - bioconda
+  - r
+  - defaults
+dependencies:
+  - r-renv=0.15.3

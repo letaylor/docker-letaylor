@@ -1,0 +1,85 @@
+{
+  "R": {
+    "Version": "4.0.2",
+    "Repositories": [
+      {
+        "Name": "CRAN",
+        "URL": "https://cran.ma.imperial.ac.uk"
+      }
+    ]
+  },
+  "Bioconductor": {
+    "Version": "3.11"
+  },
+  "Rcpp": {
+    "Package": "Rcpp",
+    "Version": "1.0.5",
+    "Source": "Repository",
+    "Repository": "CRAN",
+    "Hash": "125dc7a0ed375eb68c0ce533b48d291f",
+    "Requirements": []
+  },
+  "RcppArmadillo": {
+    "Package": "RcppArmadillo",
+    "Version": "0.9.900.2.0",
+    "Source": "Repository",
+    "Repository": "CRAN",
+    "Hash": "8845285b6151967fb0d95678b7eee11a",
+    "Requirements": [
+      "Rcpp"
+    ]
+  },
+  "RcppEigen": {
+    "Package": "RcppEigen",
+    "Version": "0.3.3.9.1",
+    "Source": "Repository",
+    "Repository": "CRAN",
+    "Hash": "ddfa72a87fdf4c80466a20818be91d00",
+    "Requirements": [
+      "Matrix",
+      "Rcpp"
+    ]
+  },
+  "Packages": {
+    "AnnotationDbi": {
+      "Package": "AnnotationDbi",
+      "Version": "1.50.3",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/AnnotationDbi",
+      "git_branch": "RELEASE_3_11",
+      "git_last_commit": "efa119c",
+      "git_last_commit_date": "2020-07-24",
+      "Hash": "d19b3dfd917dff8a56151842e82fc098",
+      "Requirements": [
+        "Biobase",
+        "BiocGenerics",
+        "DBI",
+        "IRanges",
+        "RSQLite",
+        "S4Vectors"
+      ]
+    },
+    "renv": {
+      "Package": "renv",
+      "Version": "0.15.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "318c703b833089e1bc0c6a198362ca19",
+      "Requirements": []
+    },
+    "markdown": {
+      "Package": "markdown",
+      "Version": "1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4584a57f565dd7987d59dda3a02cfb41"
+    },
+    "mime": {
+      "Package": "mime",
+      "Version": "0.7",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "908d95ccbfd1dd274073ef07a7c93934"
+    }
+  }
+}
