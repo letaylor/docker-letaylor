@@ -129,8 +129,7 @@ COPY renv.lock ${HOME}/tmp/renv.lock
 # Prepare the renv command
 RUN mkdir -p ${HOME}/tmp/renv/local
 RUN R -q -e 'install.packages("remotes")'
-RUN R -q -e 'remotes::install_version("renv", version = "1.0.3", repos = "http://cran.us.r-project.org")' && \
-    strip /usr/local/lib/R/site-library/*/libs/*.so
+RUN R -q -e 'remotes::install_version("renv", version = "1.0.3", repos = "http://cran.us.r-project.org")'
 RUN echo "library(renv)" > ${HOME}/tmp/run.R
 RUN echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" >> ${HOME}/tmp/run.R
 
