@@ -32,11 +32,6 @@
     "Version": "3.18"
   },
   "Packages": {
-    "Seurat": {
-      "Package": "Seurat",
-      "Version": "5.0.1",
-      "Source": "Repository"
-    },
     "optparse": {
       "Package": "optparse",
       "Version": "1.7.3",
