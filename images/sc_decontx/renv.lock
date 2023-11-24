@@ -32,10 +32,20 @@
     "Version": "3.18"
   },
   "Packages": {
+    "Matrix": {
+      "Package": "Matrix",
+      "Version": "1.6.3",
+      "Source": "Repository"
+    },
     "celda": {
       "Package": "celda",
-      "Version": "1.14.0",
+      "Version": "1.18.1",
       "Source": "Bioconductor"
+    },
+    "Seurat": {
+      "Package": "Seurat",
+      "Version": "4.3.0",
+      "Source": "Repository"
     },
     "optparse": {
       "Package": "optparse",
