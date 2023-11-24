@@ -32,11 +32,6 @@
     "Version": "3.18"
   },
   "Packages": {
-    "celda": {
-      "Package": "celda",
-      "Version": "1.18.1",
-      "Source": "Bioconductor"
-    },
     "optparse": {
       "Package": "optparse",
       "Version": "1.7.3",
