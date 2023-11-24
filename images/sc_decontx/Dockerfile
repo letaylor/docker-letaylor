@@ -121,6 +121,7 @@ RUN rm ${HOME}/tmp/environment.yml
 # make sure HOME files are owned by user
 #RUN chown -R ${NB_USER}:${NB_USER} ${HOME}
 #USER ${NB_USER}
+USER root
 
 # copy renv information from local directory
 COPY renv.lock ${HOME}/tmp/renv.lock
