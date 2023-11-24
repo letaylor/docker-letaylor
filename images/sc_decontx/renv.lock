@@ -37,6 +37,11 @@
       "Version": "1.18.1",
       "Source": "Bioconductor"
     },
+    "Seurat": {
+      "Package": "Seurat",
+      "Version": "4.3.0",
+      "Source": "Repository"
+    },
     "optparse": {
       "Package": "optparse",
       "Version": "1.7.3",
