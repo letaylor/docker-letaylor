@@ -34,12 +34,12 @@
   "Packages": {
     "Matrix": {
       "Package": "Matrix",
-      "Version": "1.6.3",
+      "Version": "1.6",
       "Source": "Repository"
     },
     "celda": {
       "Package": "celda",
-      "Version": "1.18.1",
+      "Version": "1.14.1",
       "Source": "Bioconductor"
     },
     "Seurat": {
