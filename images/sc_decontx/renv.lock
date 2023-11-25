@@ -32,6 +32,11 @@
     "Version": "3.16"
   },
   "Packages": {
+    "patchwork": {
+      "Package": "patchwork",
+      "Version": "1.1.3",
+      "Source": "Repository"
+    },
     "celda": {
       "Package": "celda",
       "Version": "1.14.2",
@@ -45,11 +50,6 @@
     "optparse": {
       "Package": "optparse",
       "Version": "1.7.3",
-      "Source": "Repository"
-    },
-    "patchwork": {
-      "Package": "patchwork",
-      "Version": "1.1.3",
       "Source": "Repository"
     },
     "renv": {
