@@ -39,7 +39,9 @@ RUN apt-get update && \
         zlib1g-dev \
         build-essential \
         libglpk-dev \
-        libglpk40 && \
+        libglpk40 \
+        libcairo2-dev \
+        libxt-dev && \
     apt-get purge && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
