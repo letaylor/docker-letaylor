@@ -41,7 +41,8 @@ RUN apt-get update && \
         libglpk-dev \
         libglpk40 \
         libcairo2-dev \
-        libxt-dev && \
+        libxt-dev \
+        libmagick++-dev && \
     apt-get purge && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*

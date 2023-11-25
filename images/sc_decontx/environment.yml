@@ -8,4 +8,3 @@ dependencies:
   - anndata=0.10.3
   - pandas=2.1.3
   - snakemake-minimal=7.32.4
-  - imagemagick
