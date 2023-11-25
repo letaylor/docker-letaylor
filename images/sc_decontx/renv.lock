@@ -34,6 +34,7 @@
   "Packages": {
     "celda": {
       "Package": "celda",
+      "Version": "1.14.1",
       "Source": "Bioconductor"
     },
     "Seurat": {
