@@ -32,11 +32,6 @@
     "Version": "3.17"
   },
   "Packages": {
-    "Matrix": {
-      "Package": "Matrix",
-      "Version": "1.6",
-      "Source": "Repository"
-    },
     "celda": {
       "Package": "celda",
       "Version": "1.14.1",
