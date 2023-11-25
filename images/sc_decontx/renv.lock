@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.3.1",
+    "Version": "4.2.3",
    " Repositories": [
       {
         "Name": "BioCsoft",
@@ -32,11 +32,6 @@
     "Version": "3.16"
   },
   "Packages": {
-    "celda": {
-      "Package": "multipanelfigure",
-      "Version": "2.1.2",
-      "Source": "Repository"
-    },
     "celda": {
       "Package": "celda",
       "Version": "1.14.2",
