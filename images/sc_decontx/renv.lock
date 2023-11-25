@@ -29,12 +29,11 @@
     ]
   },
   "Bioconductor": {
-    "Version": "3.16"
+    "Version": "3.17"
   },
   "Packages": {
     "celda": {
       "Package": "celda",
-      "Version": "1.14.2",
       "Source": "Bioconductor"
     },
     "Seurat": {
