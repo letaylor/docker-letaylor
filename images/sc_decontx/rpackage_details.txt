@@ -1,4 +1,0 @@
-Package	Version
-renv	1.0.3
-Seurat	5.0.1
-optparse	1.7.3
