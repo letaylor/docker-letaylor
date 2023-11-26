@@ -49,7 +49,7 @@
     },
     "DropletUtils": {
       "Package": "DropletUtils",
-      "Version": "1.22.0",
+      "Version": "1.18.0",
       "Source": "Bioconductor"
     },
     "optparse": {
