@@ -32,6 +32,16 @@
     "Version": "3.16"
   },
   "Packages": {
+    "DropletUtils": {
+      "Package": "DropletUtils",
+      "Version": "1.18.0",
+      "Source": "Bioconductor"
+    },
+    "scater": {
+      "Package": "scater",
+      "Version": "1.26.0",
+      "Source": "Bioconductor"
+    },
     "patchwork": {
       "Package": "patchwork",
       "Version": "1.1.2",
@@ -46,11 +56,6 @@
       "Package": "Seurat",
       "Version": "4.3.0",
       "Source": "Repository"
-    },
-    "DropletUtils": {
-      "Package": "DropletUtils",
-      "Version": "1.18.0",
-      "Source": "Bioconductor"
     },
     "optparse": {
       "Package": "optparse",
