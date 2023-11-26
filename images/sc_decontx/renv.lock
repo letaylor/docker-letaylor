@@ -34,7 +34,7 @@
   "Packages": {
     "patchwork": {
       "Package": "patchwork",
-      "Version": "1.0.1",
+      "Version": "1.1.2",
       "Source": "Repository"
     },
     "celda": {
