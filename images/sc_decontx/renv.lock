@@ -47,6 +47,11 @@
       "Version": "4.3.0",
       "Source": "Repository"
     },
+    "DropletUtils": {
+      "Package": "DropletUtils",
+      "Version": "1.22.0",
+      "Source": "Bioconductor"
+    },
     "optparse": {
       "Package": "optparse",
       "Version": "1.7.3",
