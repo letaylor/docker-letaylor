@@ -37,11 +37,6 @@
       "Version": "1.18.0",
       "Source": "Bioconductor"
     },
-    "scater": {
-      "Package": "scater",
-      "Version": "1.26.0",
-      "Source": "Bioconductor"
-    },
     "patchwork": {
       "Package": "patchwork",
       "Version": "1.1.2",
