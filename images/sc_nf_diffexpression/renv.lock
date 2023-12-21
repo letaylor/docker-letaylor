@@ -35,7 +35,7 @@
     "DESeq2": {
       "Package": "DESeq2",
       "Version": "1.42.0",
-      "Source": "Repository"
+      "Source": "Bioconductor"
     },
     "optparse": {
       "Package": "optparse",
