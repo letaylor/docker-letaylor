@@ -1,5 +1,4 @@
-FROM rocker/r-base:4.2.0
-# FROM rocker/tidyverse:4.2.0  # alternative
+FROM rocker/r-ver:4.3.2
 
 
 ############################ Setup: OS #########################################
@@ -39,9 +38,11 @@ RUN apt-get update && \
         libgit2-dev \
         zlib1g-dev \
         build-essential \
-        libgeos-dev \
-        libbz2-dev \
-        liblzma-dev && \
+        libglpk-dev \
+        libglpk40 \
+        libcairo2-dev \
+        libxt-dev \
+        libmagick++-dev && \
     apt-get purge && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -56,9 +57,7 @@ RUN adduser --disabled-password \
 # set up the user directory structure
 RUN mkdir ${HOME}/tmp && \
     mkdir ${HOME}/bin && \
-    mkdir ${HOME}/analysis && \
-    mkdir ${HOME}/.cache && \
-    mkdir ${HOME}/.cache/matplotlib
+    mkdir ${HOME}/analysis
 ENV PATH ${HOME}/bin:$PATH
 ################################################################################
 
@@ -86,7 +85,7 @@ RUN conda install mamba -n base -c conda-forge
 # download things to tmp
 WORKDIR ${HOME}/tmp
 
-# Example: install GCTA to bin
+# Example: install GCTA
 #RUN wget --quiet \
 #    https://cnsgenomics.com/software/gcta/gcta_1.92.1beta5.zip && \
 #    unzip gcta_1.92.1beta5.zip && \
@@ -108,94 +107,48 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 # install conda environment
 # NOTE: conda clean -atipy
 #   removes everything w/o confirmation (leaves all environments functional).
-RUN mamba config --set always_yes yes --set changeps1 no && \
-   mamba update mamba --yes && \
-   mamba env update -v -n root --file ${HOME}/tmp/environment.yml && \
-   mamba list --name root && \
-   mamba clean -atipy && \
-   rm ${HOME}/tmp/environment.yml
+RUN mamba config --set always_yes yes --set changeps1 no
+RUN mamba update mamba --yes
+RUN mamba env update -v -n root --file ${HOME}/tmp/environment.yml
+RUN mamba list --name root
+RUN mamba clean -atipy
+RUN rm ${HOME}/tmp/environment.yml
 
 # export the conda path to force container_env since .bashrc necessarily
 # sourced when when the image is used
 # ENV PATH ${HOME}/conda/envs/container_env/bin:$PATH
 # ENV CONDA_DEFAULT_ENV container_env
 # ENV CONDA_PREFIX ${HOME}/conda/envs/container_env
-
-# Set up matplotlib requirements
-ENV MPLCONFIGDIR ${HOME}/.cache/matplotlib
 ################################################################################
 
 
 ############################ Setup: R packages #################################
-# Set the R libs
-# NOTE: As of 2022-05-27, none of the R libraries are set in the Docker image.
-#       R raised errors when doing
-#       ENV R_LIBS /usr/local/lib/R/library:/usr/lib/R/library:${R_LIBS}
-#       ...which would preserve any values of ${R_LIBS} in the future
-#       The error is raised when ${R_LIBS} = "" and trailing : is at the end
-#       of the path. An if, then else bash clause did not solve the issue
-#       because Docker RUN export VAR do not track with the image.
-#       The easiest workaround for all of this was to hard code these ENV vars.
-#       WARNING: This may cause issues in the future.
-ENV R_LIBS /usr/local/lib/R/library:/usr/lib/R/library
-ENV R_LIBS_SITE /usr/local/lib/R/site-library/:/usr/lib/R/site-library
-ENV R_LIBS_USER ${HOME}/R/x86_64-pc-linux-gnu-library/4.2
-
-# NOTE: Renv expects us to be in the ${HOME}
-WORKDIR ${HOME}
-
-# Need to be root for library install in main R library
-USER root
-RUN R --vanilla -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
-
-# Now continue to build the renv as the user
+# make sure HOME files are owned by user
+#RUN chown -R ${NB_USER}:${NB_USER} ${HOME}
 #USER ${NB_USER}
+USER root
 
-# Copy renv information from local directory
+# copy renv information from local directory
 COPY renv.lock ${HOME}/tmp/renv.lock
 
-# Install the packages
-# NOTE: For Rhtslib, need to run `apt-get install libbz2-dev liblzma-dev`
-# NOTE: For rgeos (SeuratObject), need to run `apt-get install libgeos-dev`
-# NOTE: The below commands give access to default libraries and configs
-#       in the rocker image. Below they are set in R, but we set them in
-#       environment variables.
-#       options(renv.config.user.profile = T)
-#       options(renv.config.user.library = T)
-#       options(renv.config.external.libraries = .libPaths())
-ENV RENV_CONFIG_USER_PROFILE TRUE
-ENV RENV_CONFIG_USER_LIBRARY TRUE
-ENV RENV_CONFIG_EXTERNAL_LIBRARIES ${R_LIBS_USER}:${R_LIBS_SITE}:${R_LIBS}
-ENV RENV_CONSENT TRUE
-#RUN echo "R_LIBS ${R_LIBS}" && \
-#    echo "R_LIBS_SITE ${R_LIBS_SITE}" && \
-#    echo "R_LIBS_USER ${R_LIBS_USER}" && \
-#    echo "RENV_CONFIG_EXTERNAL_LIBRARIES ${RENV_CONFIG_EXTERNAL_LIBRARIES}"
-# NOTE: Dropped the below command because not necessary
-#       echo "renv::init(bare = F, force = T)" >> ${HOME}/tmp/run.R && \
-# NOTE: Dropped the below command because with R_LIBS, R_LIBS_SITE, and
-#       R_LIBS_USER set, the renv does not need to be activated. R knows it
-#       automatically.
-#       echo "renv::activate()" >> ${HOME}/tmp/run.R
-RUN echo "library(renv)" > ${HOME}/tmp/run.R && \
-    echo "options(renv.consent = T)" >> ${HOME}/tmp/run.R && \
-    echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt = F)" >> ${HOME}/tmp/run.R
+# Prepare the renv command
+RUN mkdir -p ${HOME}/tmp/renv/local
+RUN R -q -e 'install.packages("remotes")'
+RUN R -q -e 'remotes::install_version("renv", version = "1.0.3", repos = "http://cran.us.r-project.org")'
+RUN echo "library(renv)" > ${HOME}/tmp/run.R
+RUN echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" >> ${HOME}/tmp/run.R
 
-# Install the packages
-#RUN cat ${HOME}/tmp/run.R
+# Run the renv command and clear out files no longer required
 RUN Rscript ${HOME}/tmp/run.R
-#RUN cat .Rprofile
-
-# Clear out files no longer required
-RUN rm -fr ${HOME}/.cache/R/renv/source  # Clear out renv tarballs
-#RUN R -e "library(optparse)"  # Test the R install
+RUN rm ${HOME}/tmp/renv.lock
 ################################################################################
 
 
 ############################ Setup: cleanup ####################################
 # clear tmp if there is anything in there...
 USER root
-RUN rm -rf ${HOME}/tmp && rm -rf /tmp/*
+RUN rm -rf ${HOME}/tmp
+RUN rm -rf /tmp/*
 ################################################################################
 
 
