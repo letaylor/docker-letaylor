@@ -77,6 +77,11 @@
       "Version": "5.0.1",
       "Source": "Repository"
     },
+    "data.table": {
+      "Package": "data.table",
+      "Version": "1.14.10",
+      "Source": "Repository"
+    },
     "optparse": {
       "Package": "optparse",
       "Version": "1.7.3",
