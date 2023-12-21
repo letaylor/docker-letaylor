@@ -33,7 +33,7 @@
   },
   "Packages": {
     "DESeq2": {
-      "Package": "Seurat",
+      "Package": "DESeq2",
       "Version": "1.42.0",
       "Source": "Repository"
     },
