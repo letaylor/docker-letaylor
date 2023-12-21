@@ -67,6 +67,11 @@
       "Version": "1.28.0",
       "Source": "Bioconductor"
     },
+    "simplifyEnrichment": {
+      "Package": "simplifyEnrichment",
+      "Version": "1.12.0",
+      "Source": "Bioconductor"
+    },
     "lme4": {
       "Package": "lme4",
       "Version": "1.1-35.1",
