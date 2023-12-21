@@ -42,14 +42,19 @@
       "Version": "1.28.0",
       "Source": "Bioconductor"
     },
-    "BiocParallel": {
-      "Package": "BiocParallel",
-      "Version": "1.36.0",
-      "Source": "Bioconductor"
-    },
     "edgeR": {
       "Package": "edgeR",
       "Version": "4.0.3",
+      "Source": "Bioconductor"
+    },
+    "glmGamPoi": {
+      "Package": "glmGamPoi",
+      "Version": "1.14.0",
+      "Source": "Bioconductor"
+    },
+    "RUVSeq": {
+      "Package": "RUVSeq",
+      "Version": "1.36.0",
       "Source": "Bioconductor"
     },
     "fgsea": {
@@ -57,9 +62,9 @@
       "Version": "1.28.0",
       "Source": "Bioconductor"
     },
-    "glmGamPoi": {
-      "Package": "glmGamPoi",
-      "Version": "1.14.0",
+    "BiocParallel": {
+      "Package": "BiocParallel",
+      "Version": "1.36.0",
       "Source": "Bioconductor"
     },
     "Matrix": {
