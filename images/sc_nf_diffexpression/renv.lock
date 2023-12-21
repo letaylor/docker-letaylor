@@ -37,6 +37,31 @@
       "Version": "1.42.0",
       "Source": "Bioconductor"
     },
+    "MAST": {
+      "Package": "MAST",
+      "Version": "1.28.0",
+      "Source": "Bioconductor"
+    },
+    "AnnotationDbi": {
+      "Package": "AnnotationDbi",
+      "Version": "1.64.1",
+      "Source": "Bioconductor"
+    },
+    "BiocParallel": {
+      "Package": "BiocParallel",
+      "Version": "1.36.0",
+      "Source": "Bioconductor"
+    },
+    "lme4": {
+      "Package": "lme4",
+      "Version": "1.1-35.1",
+      "Source": "Repository"
+    },
+    "SeuratObject": {
+      "Package": "SeuratObject",
+      "Version": "5.0.1",
+      "Source": "Repository"
+    },
     "optparse": {
       "Package": "optparse",
       "Version": "1.7.3",
