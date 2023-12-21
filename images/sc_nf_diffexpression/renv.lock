@@ -52,6 +52,11 @@
       "Version": "1.36.0",
       "Source": "Bioconductor"
     },
+    "clusterProfiler": {
+      "Package": "clusterProfiler",
+      "Version": "4.10.0",
+      "Source": "Bioconductor"
+    },
     "lme4": {
       "Package": "lme4",
       "Version": "1.1-35.1",
