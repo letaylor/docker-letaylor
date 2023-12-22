@@ -97,6 +97,11 @@
       "Version": "3.18.0",
       "Source": "Bioconductor"
     },
+    "enrichplot": {
+      "Package": "enrichplot",
+      "Version": "1.22.0",
+      "Source": "Bioconductor"
+    },
     "BiocParallel": {
       "Package": "BiocParallel",
       "Version": "1.36.0",
