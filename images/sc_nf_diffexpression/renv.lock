@@ -127,6 +127,11 @@
       "Version": "5.0.1",
       "Source": "Repository"
     },
+    "yulab.utils": {
+      "Package": "yulab.utils",
+      "Version": "0.1.2",
+      "Source": "Repository"
+    },
     "umap": {
       "Package": "umap",
       "Version": "0.2.10.0",
