@@ -62,14 +62,19 @@
       "Version": "1.36.0",
       "Source": "Bioconductor"
     },
+    "IHW": {
+      "Package": "IHW",
+      "Version": "1.30.0",
+      "Source": "Bioconductor"
+    },
     "fgsea": {
       "Package": "fgsea",
       "Version": "1.28.0",
       "Source": "Bioconductor"
     },
-    "IHW": {
-      "Package": "IHW",
-      "Version": "1.30.0",
+    "rrvgo": {
+      "Package": "rrvgo",
+      "Version": "1.14.1",
       "Source": "Bioconductor"
     },
     "BiocParallel": {
