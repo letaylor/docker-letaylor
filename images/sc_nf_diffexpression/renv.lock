@@ -24,7 +24,7 @@
       },
       {
         "Name": "CRAN",
-        "URL": "http://archive.linux.duke.edu/cran"
+        "URL": "https://cloud.r-project.org"
       }
     ]
   },
