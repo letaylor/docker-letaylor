@@ -34,7 +34,7 @@
   "Packages": {
     "yulab.utils": {
       "Package": "yulab.utils",
-      "Version": "0.1.2",
+      "Version": "0.1.1",
       "Source": "Repository"
     },
     "DESeq2": {
