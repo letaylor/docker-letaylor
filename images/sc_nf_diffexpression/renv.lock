@@ -67,6 +67,11 @@
       "Version": "1.28.0",
       "Source": "Bioconductor"
     },
+    "IHW": {
+      "Package": "IHW",
+      "Version": "1.30.0",
+      "Source": "Bioconductor"
+    },
     "BiocParallel": {
       "Package": "BiocParallel",
       "Version": "1.36.0",
