@@ -32,6 +32,11 @@
     "Version": "3.18"
   },
   "Packages": {
+    "yulab.utils": {
+      "Package": "yulab.utils",
+      "Version": "0.1.2",
+      "Source": "Repository"
+    },
     "DESeq2": {
       "Package": "DESeq2",
       "Version": "1.42.0",
@@ -125,11 +130,6 @@
     "SeuratObject": {
       "Package": "SeuratObject",
       "Version": "5.0.1",
-      "Source": "Repository"
-    },
-    "yulab.utils": {
-      "Package": "yulab.utils",
-      "Version": "0.1.2",
       "Source": "Repository"
     },
     "umap": {
