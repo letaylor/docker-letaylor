@@ -152,6 +152,11 @@
       "Version": "0.3.7",
       "Source": "Repository"
     },
+    "fs": {
+      "Package": "fs",
+      "Version": "1.6.3",
+      "Source": "Repository"
+    },
     "optparse": {
       "Package": "optparse",
       "Version": "1.7.3",
