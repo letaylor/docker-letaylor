@@ -102,6 +102,11 @@
       "Version": "2.0.0",
       "Source": "Repository"
     },
+    "tm": {
+      "Package": "tm",
+      "Version": "0.7-11",
+      "Source": "Repository"
+    },
     "wesanderson": {
       "Package": "wesanderson",
       "Version": "0.3.7",
