@@ -92,6 +92,16 @@
       "Version": "5.0.1",
       "Source": "Repository"
     },
+    "umap": {
+      "Package": "umap",
+      "Version": "0.2.10.0",
+      "Source": "Repository"
+    },
+    "tm": {
+      "Package": "tm",
+      "Version": "0.7-11",
+      "Source": "Repository"
+    },
     "data.table": {
       "Package": "data.table",
       "Version": "1.14.10",
@@ -100,11 +110,6 @@
     "tidyverse": {
       "Package": "tidyverse",
       "Version": "2.0.0",
-      "Source": "Repository"
-    },
-    "tm": {
-      "Package": "tm",
-      "Version": "0.7-11",
       "Source": "Repository"
     },
     "wesanderson": {
