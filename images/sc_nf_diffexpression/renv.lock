@@ -77,6 +77,11 @@
       "Version": "1.14.1",
       "Source": "Bioconductor"
     },
+    "ComplexHeatmap": {
+      "Package": "ComplexHeatmap",
+      "Version": "2.18.0",
+      "Source": "Bioconductor"
+    },
     "BiocParallel": {
       "Package": "BiocParallel",
       "Version": "1.36.0",
