@@ -34,9 +34,14 @@
   "Packages": {
     "yulab.utils": {
       "Package": "yulab.utils",
-      "Version": "0.1.2",
-      "Source": "Repository",
-      "Repository": "CRAN"
+      "Version": "0.1.1.004",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "YuLab-SMU",
+      "RemoteRepo": "yulab.utils",
+      "RemoteRef": "main",
+      "RemoteSha": "fe8f7a8f8bac5861be2c8b6009f5eb3ac68cd74e"
     },
     "DESeq2": {
       "Package": "DESeq2",
