@@ -1,16 +1,16 @@
 channels:
-  - letaylor
   - conda-forge
   - r
   - bioconda
   - defaults
+  - letaylor
 dependencies:
   - pip
   - plotnine
   - seaborn>=0.11.2
   - statsmodels>=0.13.2
-  - matplotlib-base<3.7
-  - scanpy=1.5.2.dev0
-  - pandas=2.1.4
-  - scipy=1.11.4
+  - matplotlib-base
+  - scanpy
+  - pandas
+  - scipy
   - htslib>=1.15.1
