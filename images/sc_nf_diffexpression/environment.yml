@@ -9,7 +9,7 @@ dependencies:
   - plotnine
   - seaborn>=0.11.2
   - statsmodels>=0.13.2
-  - scanpy=1.5.2.dev0
+  - scanpy
   - pandas
   - scipy
   - htslib>=1.15.1
