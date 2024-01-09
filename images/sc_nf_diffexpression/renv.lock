@@ -113,6 +113,11 @@
       "Version": "1.22.0",
       "Source": "Bioconductor"
     },
+    "clusterProfiler": {
+      "Package": "clusterProfiler",
+      "Version": "4.10.0",
+      "Source": "Bioconductor"
+    },
     "BiocParallel": {
       "Package": "BiocParallel",
       "Version": "1.36.0",
