@@ -153,6 +153,9 @@ RUN rm -rf /tmp/*
 
 
 ############################ Deployment ########################################
+USER root
+RUN chmod -R 755 ${HOME}
+
 # set wd to user home
 WORKDIR ${HOME}
 
