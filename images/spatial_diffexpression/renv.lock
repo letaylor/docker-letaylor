@@ -43,6 +43,28 @@
       "RemoteRef": "main",
       "RemoteSha": "0a0861e3d1e16014a20e9b743d0e19d3b42231f3"
     },
+    "yulab.utils": {
+      "Package": "yulab.utils",
+      "Version": "0.1.1.004",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "YuLab-SMU",
+      "RemoteRepo": "yulab.utils",
+      "RemoteRef": "main",
+      "RemoteSha": "fe8f7a8f8bac5861be2c8b6009f5eb3ac68cd74e"
+    },
+    "ggforestplot": {
+      "Package": "ggforestplot",
+      "Version": "0.1.0",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "nightingalehealth",
+      "RemoteRepo": "ggforestplot",
+      "RemoteRef": "master",
+      "RemoteSha": "547617e63fa481a5f28ffc56c07d46be4af688b2"
+    },
     "qvalue": {
       "Package": "qvalue",
       "Version": "2.34.0",
@@ -92,11 +114,6 @@
       "Package": "BiocParallel",
       "Version": "1.36.0",
       "Source": "Bioconductor"
-    },
-    "Matrix": {
-      "Package": "Matrix",
-      "Version": "1.6-4",
-      "Source": "Repository"
     },
     "data.table": {
       "Package": "data.table",
