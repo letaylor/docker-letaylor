@@ -1,0 +1,137 @@
+{
+  "R": {
+    "Version": "4.3.2",
+   " Repositories": [
+      {
+        "Name": "BioCsoft",
+        "URL": "https://bioconductor.org/packages/3.18/bioc"
+      },
+      {
+        "Name": "BioCann",
+        "URL": "https://bioconductor.org/packages/3.18/data/annotation"
+      },
+      {
+        "Name": "BioCexp",
+        "URL": "https://bioconductor.org/packages/3.18/data/experiment"
+      },
+      {
+        "Name": "BioCworkflows",
+        "URL": "https://bioconductor.org/packages/3.18/workflows"
+      },
+      {
+        "Name": "BioCbooks",
+        "URL": "https://bioconductor.org/packages/3.18/books"
+      },
+      {
+        "Name": "CRAN",
+        "URL": "https://cloud.r-project.org"
+      }
+    ]
+  },
+  "Bioconductor": {
+    "Version": "3.18"
+  },
+  "Packages": {
+    "yulab.utils": {
+      "Package": "spacexr",
+      "Version": "2.2.1",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "dmcable",
+      "RemoteRepo": "spacexr",
+      "RemoteRef": "main",
+      "RemoteSha": "0a0861e3d1e16014a20e9b743d0e19d3b42231f3"
+    },
+    "qvalue": {
+      "Package": "qvalue",
+      "Version": "2.32.0",
+      "Source": "Bioconductor"
+    },
+    "fgsea": {
+      "Package": "fgsea",
+      "Version": "1.28.0",
+      "Source": "Bioconductor"
+    },
+    "rrvgo": {
+      "Package": "rrvgo",
+      "Version": "1.14.1",
+      "Source": "Bioconductor"
+    },
+    "ComplexHeatmap": {
+      "Package": "ComplexHeatmap",
+      "Version": "2.18.0",
+      "Source": "Bioconductor"
+    },
+    "simplifyEnrichment": {
+      "Package": "simplifyEnrichment",
+      "Version": "1.12.0",
+      "Source": "Bioconductor"
+    },
+    "GOSemSim": {
+      "Package": "GOSemSim",
+      "Version": "2.28.0",
+      "Source": "Bioconductor"
+    },
+    "org.Hs.eg.db": {
+      "Package": "org.Hs.eg.db",
+      "Version": "3.18.0",
+      "Source": "Bioconductor"
+    },
+    "enrichplot": {
+      "Package": "enrichplot",
+      "Version": "1.22.0",
+      "Source": "Bioconductor"
+    },
+    "clusterProfiler": {
+      "Package": "clusterProfiler",
+      "Version": "4.10.0",
+      "Source": "Bioconductor"
+    },
+    "BiocParallel": {
+      "Package": "BiocParallel",
+      "Version": "1.36.0",
+      "Source": "Bioconductor"
+    },
+    "Matrix": {
+      "Package": "Matrix",
+      "Version": "1.6-4",
+      "Source": "Repository"
+    },
+    "data.table": {
+      "Package": "data.table",
+      "Version": "1.14.10",
+      "Source": "Repository"
+    },
+    "tidyverse": {
+      "Package": "tidyverse",
+      "Version": "2.0.0",
+      "Source": "Repository"
+    },
+    "plyr": {
+      "Package": "plyr",
+      "Version": "1.8.9",
+      "Source": "Repository"
+    },
+    "ggrepel": {
+      "Package": "ggrepel",
+      "Version": "0.9.5",
+      "Source": "Repository"
+    },
+    "wesanderson": {
+      "Package": "wesanderson",
+      "Version": "0.3.7",
+      "Source": "Repository"
+    },
+    "optparse": {
+      "Package": "optparse",
+      "Version": "1.7.3",
+      "Source": "Repository"
+    },
+    "renv": {
+      "Package": "renv",
+      "Version": "1.0.3",
+      "Source": "Repository"
+    }
+  }
+}
