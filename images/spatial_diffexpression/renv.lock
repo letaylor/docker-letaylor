@@ -45,7 +45,7 @@
     },
     "qvalue": {
       "Package": "qvalue",
-      "Version": "2.32.0",
+      "Version": "2.34.0",
       "Source": "Bioconductor"
     },
     "fgsea": {
