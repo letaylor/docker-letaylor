@@ -6,12 +6,26 @@ channels:
   - defaults
 dependencies:
   - pandas
+  - numpy
+  - scipy
+  - tables
   - scanpy
   - python-igraph
   - plotnine
   - kneed
   - louvain
   - leidenalg
+  - pyro-ppl
+  - torch
+  - matplotlib
+  - loompy
+  - ipython
+  - jupyter
+  - jupyter_contrib_nbextensions
+  - notebook<7.0.0
+  - nbconvert<7.0.0
+  - lxml_html_clean
+  - psutil
   - pip
   - pip:
      - git+https://github.com/broadinstitute/CellBender.git
