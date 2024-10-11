@@ -1,0 +1,17 @@
+channels:
+  - letaylor
+  - pytorch
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - pandas
+  - scanpy
+  - python-igraph
+  - plotnine
+  - kneed
+  - louvain
+  - leidenalg
+  - pip
+  - pip:
+     - git+https://github.com/broadinstitute/CellBender.git
