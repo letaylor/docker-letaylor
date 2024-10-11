@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.3.2
+FROM us.gcr.io/cellbender@sha256:093f2caf1ce4acae4541ea45e52ab7b220ca131ec73b4d1f664b85fe12850bae
 
 
 ############################ Setup: OS #########################################
