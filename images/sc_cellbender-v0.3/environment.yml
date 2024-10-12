@@ -10,3 +10,6 @@ dependencies:
   - kneed
   - louvain
   - leidenalg
+  - pip
+  - pandas
+  - scanpy
