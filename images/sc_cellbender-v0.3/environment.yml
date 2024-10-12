@@ -22,3 +22,4 @@ dependencies:
   - jupyter_contrib_nbextensions
   - notebook<7.0.0
   - nbconvert<7.0.0
+  - lxml_html_clean
