@@ -16,5 +16,7 @@ dependencies:
   - pandas
   - numpy
   - scipy
-  - tables
   - matplotlib
+  - ipython
+  - jupyter
+  - jupyter_contrib_nbextensions
