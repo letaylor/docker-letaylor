@@ -1,4 +1,4 @@
-FROM us.gcr.io/cellbender@sha256:093f2caf1ce4acae4541ea45e52ab7b220ca131ec73b4d1f664b85fe12850bae
+FROM rocker/r-ver:3.6.1
 
 
 ############################ Setup: OS #########################################
@@ -37,12 +37,7 @@ RUN apt-get update && \
         libxml2-dev \
         libgit2-dev \
         zlib1g-dev \
-        build-essential \
-        libglpk-dev \
-        libglpk40 \
-        libcairo2-dev \
-        libxt-dev \
-        libmagick++-dev && \
+        build-essential && \
     apt-get purge && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -73,8 +68,6 @@ RUN echo "export PATH=${HOME}/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
     ${HOME}/conda/bin/conda clean -atipy
 ENV PATH ${HOME}/conda/bin:$PATH
 
-# install mamba
-RUN conda install mamba -n base -c conda-forge
 
 # alternative conda install (instead of the manual install from above)
 # FROM continuumio/miniconda3:latest
@@ -107,12 +100,12 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 # install conda environment
 # NOTE: conda clean -atipy
 #   removes everything w/o confirmation (leaves all environments functional).
-RUN conda config --set always_yes yes --set changeps1 no
-RUN mamba update mamba --yes
-RUN mamba env update -v -n root --file ${HOME}/tmp/environment.yml
-RUN mamba list --name root
-RUN mamba clean -atipy
-RUN rm ${HOME}/tmp/environment.yml
+RUN conda config --set always_yes yes --set changeps1 no && \
+    conda update conda --yes && \
+    conda env update -v -n root --file ${HOME}/tmp/environment.yml && \
+    conda list --name root && \
+    conda clean -atipy && \
+    rm ${HOME}/tmp/environment.yml
 
 # export the conda path to force container_env since .bashrc necessarily
 # sourced when when the image is used
@@ -123,24 +116,15 @@ RUN rm ${HOME}/tmp/environment.yml
 
 
 ############################ Setup: R packages #################################
-# # make sure HOME files are owned by user
-# #RUN chown -R ${NB_USER}:${NB_USER} ${HOME}
-# #USER ${NB_USER}
-# USER root
+RUN mkdir ${HOME}/tmp/renv && \
+    echo 'source("renv/activate.R")' > ${HOME}/tmp/run.R && \
+    echo 'renv::restore()' >> ${HOME}/tmp/run.R
 
-# # copy renv information from local directory
-# COPY renv.lock ${HOME}/tmp/renv.lock
+# copy renv information from local directory
+COPY renv.lock ${HOME}/tmp/renv.lock
+COPY renv/activate.R ${HOME}/tmp/renv/activate.R
 
-# # Prepare the renv command
-# RUN mkdir -p ${HOME}/tmp/renv/local
-# RUN R -q -e 'install.packages("remotes")'
-# RUN R -q -e 'remotes::install_version("renv", version = "1.0.3", repos = "http://cran.us.r-project.org")'
-# RUN echo "library(renv)" > ${HOME}/tmp/run.R
-# RUN echo "renv::restore(lockfile=\"${HOME}/tmp/renv.lock\", prompt=F)" >> ${HOME}/tmp/run.R
-
-# # Run the renv command and clear out files no longer required
-# RUN Rscript ${HOME}/tmp/run.R
-# RUN rm ${HOME}/tmp/renv.lock
+RUN Rscript ${HOME}/tmp/run.R
 ################################################################################
 
 
@@ -153,9 +137,6 @@ RUN rm -rf /tmp/*
 
 
 ############################ Deployment ########################################
-USER root
-RUN chmod -R 755 ${HOME}
-
 # set wd to user home
 WORKDIR ${HOME}
 
