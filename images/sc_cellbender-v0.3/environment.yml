@@ -11,5 +11,10 @@ dependencies:
   - louvain
   - leidenalg
   - pip
-  - pandas
+  - anndata
   - scanpy
+  - pandas
+  - numpy
+  - scipy
+  - tables
+  - matplotlib
