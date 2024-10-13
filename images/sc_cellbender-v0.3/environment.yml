@@ -21,4 +21,3 @@ dependencies:
   - jupyter
   - jupyter_contrib_nbextensions
   - psutil
-  - loompy
