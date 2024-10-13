@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/pytorch-notebook:cuda-latest
+FROM quay.io/jupyter/pytorch-notebook:cuda12-pytorch-2.4.1
 
 ############################ Setup: OS #########################################
 USER root
