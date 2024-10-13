@@ -38,60 +38,15 @@ ENV LC_ALL en_US.UTF-8 \
     LANGUAGE en_US.UTF-8 \
     SHELL /bin/bash
 
-# # Set up locales properly
-# RUN apt-get update && \
-#     apt-get install --yes --no-install-recommends locales && \
-#     apt-get purge && \
-#     apt-get clean && \
-#     rm -rf /var/lib/apt/lists/*
-
-# RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
-#     locale-gen
-
-# ENV LC_ALL en_US.UTF-8
-# ENV LANG en_US.UTF-8
-# ENV LANGUAGE en_US.UTF-8
-
-# # Use bash as default shell, rather than sh
-# ENV SHELL /bin/bash
-
-# # run critical system updates ... one could also use the artful-curl pack
-# RUN apt-get update && \
-#     apt-get install --yes --no-install-recommends \
-#         wget \
-#         bzip2 \
-#         ca-certificates \
-#         curl \
-#         git \
-#         zip \
-#         unzip \
-#         procps && \
-#     apt-get install --yes \
-#         libpng-dev \
-#         libcurl4-gnutls-dev \
-#         libssl-dev \
-#         libxml2-dev \
-#         libgit2-dev \
-#         zlib1g-dev \
-#         build-essential \
-#         libglpk-dev \
-#         libglpk40 \
-#         libcairo2-dev \
-#         libxt-dev \
-#         libmagick++-dev && \
-#     apt-get purge && \
-#     apt-get clean && \
-#     rm -rf /var/lib/apt/lists/*
-
 # set up a user, to avoid running containers as root
+# and
+# set up the user directory structure
 ENV NB_USER container_user
 ENV HOME /home/${NB_USER}
 RUN adduser --disabled-password \
     --gecos "Default user" \
-    ${NB_USER}
-
-# set up the user directory structure
-RUN mkdir ${HOME}/tmp && \
+    ${NB_USER} && \
+    mkdir ${HOME}/tmp && \
     mkdir ${HOME}/bin && \
     mkdir ${HOME}/analysis
 ENV PATH ${HOME}/bin:$PATH
@@ -143,12 +98,12 @@ COPY environment.yml ${HOME}/tmp/environment.yml
 # install conda environment
 # NOTE: conda clean -atipy
 #   removes everything w/o confirmation (leaves all environments functional).
-RUN conda config --set always_yes yes --set changeps1 no
-RUN mamba update mamba --yes
-RUN mamba env update -v -n root --file ${HOME}/tmp/environment.yml
-RUN mamba list --name root
-RUN mamba clean -atipy
-RUN rm ${HOME}/tmp/environment.yml
+RUN conda config --set always_yes yes --set changeps1 no && \
+    mamba update mamba --yes && \
+    mamba env update -v -n root --file ${HOME}/tmp/environment.yml && \
+    mamba list --name root && \
+    mamba clean -atipy && \ 
+    rm ${HOME}/tmp/environment.yml
 
 # export the conda path to force container_env since .bashrc necessarily
 # sourced when when the image is used
