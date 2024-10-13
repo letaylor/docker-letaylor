@@ -1,5 +1,4 @@
-FROM rocker/r-ver:4.3.2
-
+FROM quay.io/repository/jupyter/pytorch-notebook
 
 ############################ Setup: OS #########################################
 # Set up locales properly
@@ -64,17 +63,17 @@ ENV PATH ${HOME}/bin:$PATH
 
 ############################ Setup: conda ######################################
 # install conda
-USER root
-ENV CONDA_FILE https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-RUN echo "export PATH=${HOME}/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
-    wget --quiet ${CONDA_FILE} -O /tmp/miniconda.sh && \
-    /bin/bash /tmp/miniconda.sh -b -p ${HOME}/conda && \
-    rm /tmp/miniconda.sh && \
-    ${HOME}/conda/bin/conda clean -atipy
-ENV PATH ${HOME}/conda/bin:$PATH
+#USER root
+#ENV CONDA_FILE https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+#RUN echo "export PATH=${HOME}/conda/bin:$PATH" > /etc/profile.d/conda.sh && \
+#    wget --quiet ${CONDA_FILE} -O /tmp/miniconda.sh && \
+#    /bin/bash /tmp/miniconda.sh -b -p ${HOME}/conda && \
+#    rm /tmp/miniconda.sh && \
+#    ${HOME}/conda/bin/conda clean -atipy
+#ENV PATH ${HOME}/conda/bin:$PATH
 
 # install mamba
-RUN conda install mamba -n base -c conda-forge
+#RUN conda install mamba -n base -c conda-forge
 
 # alternative conda install (instead of the manual install from above)
 # FROM continuumio/miniconda3:latest
