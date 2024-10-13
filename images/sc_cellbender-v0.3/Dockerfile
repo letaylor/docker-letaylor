@@ -1,7 +1,43 @@
-FROM quay.io/jupyter/pytorch-notebook::cuda-latest
+FROM quay.io/jupyter/pytorch-notebook:cuda-latest
 
 ############################ Setup: OS #########################################
 USER root
+
+# Set up locales and install essential system packages
+# RUN apt-get update && \
+#     apt-get install --yes --no-install-recommends \
+#         locales \
+#         wget \
+#         bzip2 \
+#         ca-certificates \
+#         curl \
+#         git \
+#         zip \
+#         unzip \
+#         procps && \
+#     apt-get install --yes \
+#         libpng-dev \
+#         libcurl4-gnutls-dev \
+#         libssl-dev \
+#         libxml2-dev \
+#         libgit2-dev \
+#         zlib1g-dev \
+#         build-essential \
+#         libglpk-dev \
+#         libglpk40 \
+#         libcairo2-dev \
+#         libxt-dev \
+#         libmagick++-dev && \
+#     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
+#     locale-gen && \
+#     apt-get purge && apt-get clean && rm -rf /var/lib/apt/lists/*
+#
+# # Set environment variables for locale and shell
+# ENV LC_ALL en_US.UTF-8 \
+#     LANG en_US.UTF-8 \
+#     LANGUAGE en_US.UTF-8 \
+#     SHELL /bin/bash
+
 # Set up locales properly
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends locales && \
