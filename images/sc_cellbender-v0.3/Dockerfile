@@ -1,6 +1,7 @@
 FROM quay.io/jupyter/pytorch-notebook:latest
 
 ############################ Setup: OS #########################################
+USER root
 # Set up locales properly
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends locales && \
