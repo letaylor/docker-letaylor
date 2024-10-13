@@ -1,4 +1,4 @@
-FROM quay.io/repository/jupyter/pytorch-notebook
+FROM quay.io/jupyter/pytorch-notebook:latest
 
 ############################ Setup: OS #########################################
 # Set up locales properly
