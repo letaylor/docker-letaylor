@@ -20,6 +20,5 @@ dependencies:
   - ipython
   - jupyter
   - jupyter_contrib_nbextensions
-  - lxml_html_clean
   - psutil
   - loompy
