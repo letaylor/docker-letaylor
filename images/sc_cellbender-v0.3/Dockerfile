@@ -4,60 +4,9 @@ FROM quay.io/jupyter/pytorch-notebook:cuda12-pytorch-2.4.1
 USER root
 
 # Set up locales and install essential system packages
-# RUN apt-get update && \
-#     apt-get install --yes --no-install-recommends \
-#         locales \
-#         wget \
-#         bzip2 \
-#         ca-certificates \
-#         curl \
-#         git \
-#         zip \
-#         unzip \
-#         procps && \
-#     apt-get install --yes \
-#         libpng-dev \
-#         libcurl4-gnutls-dev \
-#         libssl-dev \
-#         libxml2-dev \
-#         libgit2-dev \
-#         zlib1g-dev \
-#         build-essential \
-#         libglpk-dev \
-#         libglpk40 \
-#         libcairo2-dev \
-#         libxt-dev \
-#         libmagick++-dev && \
-#     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
-#     locale-gen && \
-#     apt-get purge && apt-get clean && rm -rf /var/lib/apt/lists/*
-#
-# # Set environment variables for locale and shell
-# ENV LC_ALL en_US.UTF-8 \
-#     LANG en_US.UTF-8 \
-#     LANGUAGE en_US.UTF-8 \
-#     SHELL /bin/bash
-
-# Set up locales properly
-RUN apt-get update && \
-    apt-get install --yes --no-install-recommends locales && \
-    apt-get purge && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
-    locale-gen
-
-ENV LC_ALL en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
-
-# Use bash as default shell, rather than sh
-ENV SHELL /bin/bash
-
-# run critical system updates ... one could also use the artful-curl pack
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends \
+        locales \
         wget \
         bzip2 \
         ca-certificates \
@@ -79,9 +28,60 @@ RUN apt-get update && \
         libcairo2-dev \
         libxt-dev \
         libmagick++-dev && \
-    apt-get purge && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
+    locale-gen && \
+    apt-get purge && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Set environment variables for locale and shell
+ENV LC_ALL en_US.UTF-8 \
+    LANG en_US.UTF-8 \
+    LANGUAGE en_US.UTF-8 \
+    SHELL /bin/bash
+
+# # Set up locales properly
+# RUN apt-get update && \
+#     apt-get install --yes --no-install-recommends locales && \
+#     apt-get purge && \
+#     apt-get clean && \
+#     rm -rf /var/lib/apt/lists/*
+
+# RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
+#     locale-gen
+
+# ENV LC_ALL en_US.UTF-8
+# ENV LANG en_US.UTF-8
+# ENV LANGUAGE en_US.UTF-8
+
+# # Use bash as default shell, rather than sh
+# ENV SHELL /bin/bash
+
+# # run critical system updates ... one could also use the artful-curl pack
+# RUN apt-get update && \
+#     apt-get install --yes --no-install-recommends \
+#         wget \
+#         bzip2 \
+#         ca-certificates \
+#         curl \
+#         git \
+#         zip \
+#         unzip \
+#         procps && \
+#     apt-get install --yes \
+#         libpng-dev \
+#         libcurl4-gnutls-dev \
+#         libssl-dev \
+#         libxml2-dev \
+#         libgit2-dev \
+#         zlib1g-dev \
+#         build-essential \
+#         libglpk-dev \
+#         libglpk40 \
+#         libcairo2-dev \
+#         libxt-dev \
+#         libmagick++-dev && \
+#     apt-get purge && \
+#     apt-get clean && \
+#     rm -rf /var/lib/apt/lists/*
 
 # set up a user, to avoid running containers as root
 ENV NB_USER container_user
