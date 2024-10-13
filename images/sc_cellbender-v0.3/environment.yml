@@ -10,10 +10,12 @@ dependencies:
   - kneed
   - louvain
   - leidenalg
-  - pip
   - anndata
   - scanpy
   - pandas
   - numpy
   - scipy
   - matplotlib
+  - pip
+  - pip:
+     - git+https://github.com/broadinstitute/CellBender.git
