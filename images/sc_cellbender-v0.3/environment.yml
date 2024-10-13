@@ -22,3 +22,4 @@ dependencies:
   - jupyter_contrib_nbextensions
   - psutil
   - loompy
+  - torch
