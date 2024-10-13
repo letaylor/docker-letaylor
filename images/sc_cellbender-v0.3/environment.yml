@@ -17,3 +17,5 @@ dependencies:
   - numpy
   - scipy
   - matplotlib
+  - pip:
+     - git+https://github.com/broadinstitute/CellBender.git
