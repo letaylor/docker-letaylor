@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/pytorch-notebook:latest
+FROM quay.io/jupyter/cuda-pytorch-notebook:latest
 
 ############################ Setup: OS #########################################
 USER root
